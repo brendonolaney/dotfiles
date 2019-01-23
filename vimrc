@@ -1,5 +1,9 @@
 set nocompatible
 
+if &shell =~# 'fish$'
+    set shell=bash
+endif
+
 set rtp +=/usr/local/opt/fzf
 
 call plug#begin('~/.local/share/nvim/plugged')
