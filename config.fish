@@ -19,18 +19,6 @@ alias ll='ls -lahF'
 alias mv='mv -i'
 alias rm='rm -i'
 
-# CLIO specific stuff
-set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
-
-set -x RUBYLIB "$HOME/clio/themis/lib"
-set -x NODE_MODULES "$HOME/clio/themis/node_modules"
-
-set -x DEV_ROOT_PATH "$HOME/clio/themis"
-
-alias cdr='cd ~/clio/themis'
-
-if status --is-interactive
-  source (rbenv init - | psub)
-  source (nodenv init - | psub)
+if test -e ~/.config/fish/config.local.fish
+  source ~/.config/fish/config.local.fish
 end
-

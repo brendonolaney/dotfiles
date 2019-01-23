@@ -1,38 +1,27 @@
 set nocompatible
-filetype off
 
-set rtp +=~/.config/nvim/bundle/Vundle.vim
 set rtp +=/usr/local/opt/fzf
 
-call vundle#begin('~/.config/nvim/bundle')
+call plug#begin('~/.local/share/nvim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-sensible'
+Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'janko-m/vim-test'
+Plug 'mileszs/ack.vim'
+Plug 'w0rp/ale'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
-" Sensible
-Plugin 'tpope/vim-sensible'
-
-" Filetypes
-Plugin 'dag/vim-fish'
-Plugin 'leafgarland/typescript-vim'
-
-" General Stuff
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'janko-m/vim-test'
-Plugin 'mileszs/ack.vim'
-Plugin 'w0rp/ale'
-Plugin 'junegunn/fzf.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-endwise'
-Plugin 'jiangmiao/auto-pairs'
-
-" CLIO specific
-Plugin 'tpope/vim-rails'
-
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 syntax on
@@ -50,12 +39,8 @@ set softtabstop=2
 set cursorline
 set colorcolumn=120
 
-inoremap jj <Esc>
-imap <C-e> <esc>$i<right>
-imap <C-a> <esc>0i
-map <C-e> <esc>$<right>
-map <C-a> <esc>0
-imap <C-space> <esc><right>a
+inoremap jj <esc>
+imap <C-space> <esc><right>i<right>
 imap <S-space> <esc>i
 
 " FZF bindings
@@ -69,11 +54,6 @@ nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
-" CLIO SPECIFIC STUFF
-" vim-test use yarn to run apollo test suite
-let g:test#javascript#karma#executable = 'yarn test:apollo:once'
-
-" ALE Settings
-let g:ale_ruby_rubocop_options = "--config ~/clio/themis/.rubocop.yml"
-let g:ale_typescript_tslint_options = "--config ~/clio/themis/tlsint.json"
-
+if filereadable(glob("~/.config/nvim/init.local.vim"))
+  so ~/.config/nvim/init.local.vim
+endif

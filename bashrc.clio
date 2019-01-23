@@ -1,0 +1,10 @@
+#!/bin/sh
+
+export RUBYLIB="$HOME/clio/themis/lib"
+export NODE_MODULES="$HOME/clio/themis/node_modules"
+
+alias cdr='cd ~/clio/themis'
+
+# shellcheck disable=SC1090
+. "$HOME/.clio_profile"
+
