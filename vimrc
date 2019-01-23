@@ -27,6 +27,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
+Plugin 'jiangmiao/auto-pairs'
 
 " CLIO specific
 Plugin 'tpope/vim-rails'
@@ -56,14 +57,6 @@ map <C-e> <esc>$<right>
 map <C-a> <esc>0
 imap <C-space> <esc><right>a
 imap <S-space> <esc>i
-
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
 
 " FZF bindings
 nmap <C-p> :FZF<cr>
