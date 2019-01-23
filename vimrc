@@ -65,10 +65,6 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-" ALE Settings
-let g:ale_ruby_rubocop_options = "--config ~/clio/themis/.rubocop.yml"
-let g:ale_typescript_tslint_options = "--config ~/clio/themis/tlsint.json"
-
 " FZF bindings
 nmap <C-p> :FZF<cr>
 
@@ -83,4 +79,8 @@ nmap <silent> t<C-g> :TestVisit<CR>
 " CLIO SPECIFIC STUFF
 " vim-test use yarn to run apollo test suite
 let g:test#javascript#karma#executable = 'yarn test:apollo:once'
+
+" ALE Settings
+let g:ale_ruby_rubocop_options = "--config ~/clio/themis/.rubocop.yml"
+let g:ale_typescript_tslint_options = "--config ~/clio/themis/tlsint.json"
 
