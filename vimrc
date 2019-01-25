@@ -13,7 +13,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'dag/vim-fish', { 'for': 'fish' }
-Plug 'easymotion/vim-easymotion'
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
@@ -54,7 +53,6 @@ set tabstop=2
 " Mappings
 inoremap jj <esc>
 imap <C-space> <esc><right>i<right>
-imap <S-space> <esc>i
 
 " FZF Mappings
 nmap <C-p> :FZF<cr>
@@ -66,6 +64,9 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
+
+" Use ag
+let g:ackprg = 'ag --vimgrep'
 
 " Load machine local settings
 if filereadable(glob("~/.config/nvim/init.local.vim"))

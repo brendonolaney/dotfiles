@@ -1,5 +1,5 @@
 " vim-test use yarn to run apollo test suite
-let g:test#javascript#karma#options = 'config/webpack/karma/karma-apollo.conf.js'
+let test#enabled_runners = ["ruby#rspec"]
 
 " ALE Settings
 let g:ale_ruby_rubocop_options = "--config ~/clio/themis/.rubocop.yml"
