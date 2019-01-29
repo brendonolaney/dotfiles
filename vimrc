@@ -52,7 +52,6 @@ set tabstop=2
 
 " Mappings
 inoremap jj <esc>
-imap <C-space> <esc><right>i<right>
 
 " FZF Mappings
 nmap <C-p> :FZF<cr>
