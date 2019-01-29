@@ -12,6 +12,7 @@ set rtp +=/usr/local/opt/fzf
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
