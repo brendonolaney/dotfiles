@@ -75,7 +75,7 @@ nmap <leader>gg :Git<Space>
 
 " Gitgutter
 nmap <leader>gn ]c
-nmap <leader>gp [c
+nmap <leader>gN [c
 
 " FZF Mappings
 nmap <leader>f :FZF<cr>
