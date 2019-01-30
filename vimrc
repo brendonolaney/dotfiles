@@ -16,7 +16,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'janko-m/vim-test'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'mileszs/ack.vim'
@@ -73,6 +72,10 @@ nmap <leader>gw :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gp :Gpush<cr> 
 nmap <leader>gg :Git<Space>
+
+" Gitgutter
+nmap <leader>gn ]c
+nmap <leader>gp [c
 
 " FZF Mappings
 nmap <leader>f :FZF<cr>
