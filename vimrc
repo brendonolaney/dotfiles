@@ -1,4 +1,5 @@
 set nocompatible
+let mapleader = ' '
 
 " Vim doesn't play well with fish
 if &shell =~# 'fish$'
@@ -52,20 +53,40 @@ set softtabstop=2
 set tabstop=2
 
 " Mappings
-inoremap jj <esc>
+" """"""""""
+map fd <esc>
+imap fd <esc>
+
+" NERDTree
+nmap <leader>n :NERDTreeToggle<cr>
+
+" Commentary
+nmap <leader>cc gcc
+nmap <leader>c gc
+vmap <leader>c gc
+
+" Fugitive
+nmap <leader>gd :Gdiff<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gb :Gblame<cr>
+nmap <leader>gw :Gwrite<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gp :Gpush<cr> 
+nmap <leader>gg :Git<Space>
 
 " FZF Mappings
-nmap <C-p> :FZF<cr>
+nmap <leader>f :FZF<cr>
 
 " vim-test Settings/Mappings
 let test#strategy = "neovim"
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
 
 " Use ag
+nmap <leader>s :Ack!<Space>
 let g:ackprg = 'ag --vimgrep'
 
 " Load machine local settings
