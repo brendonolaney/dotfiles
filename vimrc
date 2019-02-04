@@ -58,6 +58,7 @@ imap fd <esc>
 map <leader>q :q<cr>
 map <leader>Q :q!<cr>
 map <leader>w :w<cr>
+map <leader>W :wq<cr>
 map <leader>e :e<Space>
 map <leader>E :e!<Space>
 map <leader>tt <C-w>s<C-w>j:terminal<cr>
