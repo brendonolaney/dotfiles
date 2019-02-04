@@ -55,6 +55,12 @@ set tabstop=2
 " """"""""""
 map fd <esc>
 imap fd <esc>
+map <leader>q :q<cr>
+map <leader>Q :q!<cr>
+map <leader>w :w<cr>
+map <leader>e :e<Space>
+map <leader>E :e!<Space>
+map <leader>tt <C-w>s<C-w>j:terminal<cr>
 
 " NERDTree
 nmap <leader>n :NERDTreeToggle<cr>
@@ -78,7 +84,7 @@ nmap <leader>gn ]c
 nmap <leader>gN [c
 
 " FZF Mappings
-nmap <leader>f :FZF<cr>
+nmap <leader>ff :FZF<cr>
 
 " vim-test Settings/Mappings
 let test#strategy = "neovim"
@@ -89,7 +95,7 @@ nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
 
 " Use ag
-nmap <leader>s :Ack!<Space>
+nmap <leader>fs :Ack!<Space>
 let g:ackprg = 'ag --vimgrep'
 
 " Load machine local settings
