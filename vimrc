@@ -71,7 +71,7 @@ map fd <esc>
 imap fd <esc>
 nmap <leader>qq :q<cr>
 nmap <leader>qa :qa<cr>
-nmap <leader>qw :qw<cr>
+nmap <leader>qw :wq<cr>
 nmap <leader>w :w<cr>
 nmap <leader>bl :ls<cr>
 nmap <leader>bN :bn<cr>
