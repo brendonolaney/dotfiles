@@ -51,27 +51,51 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
+" Plugin Settings
+let test#strategy = "neovim"
+let g:ackprg = 'ag --vimgrep'
+
+
 " Mappings
-" """"""""""
+"
+" My personal spacemacs-esque bindings
+" q - quit
+" w - write
+" e - edit
+" b - buffers, tabs, terminal
+" t - terminal and testing
+" f - file location
+" c - comments
+" g - git
+"
 map fd <esc>
 imap fd <esc>
-map <leader>q :q<cr>
-map <leader>Q :q!<cr>
-map <leader>w :w<cr>
-map <leader>W :wq<cr>
-map <leader>e :e<Space>
-map <leader>E :e!<Space>
-map <leader>tt <C-w>s<C-w>j:terminal<cr>
-
-" NERDTree
-nmap <leader>n :NERDTreeToggle<cr>
-
-" Commentary
+nmap <leader>q :q<cr>
+nmap <leader>Q :q!<cr>
+nmap <leader>w :w<cr>
+nmap <leader>W :wq<cr>
+nmap <leader>e :e<Space>
+nmap <leader>E :e!<Space>
+nmap <leader>bl :ls<cr>
+nmap <leader>bN :bn<cr>
+nmap <leader>bP :bp<cr>
+nmap <leader>bT <C-w>s<C-w>j:terminal<cr>a
+nmap <leader>bD :bd
+nmap <leader>bt :tabnew<cr>
+nmap <leader>bn gt
+nmap <leader>bp gT
+nmap <leader>bd :tabclose<cr>
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
+nmap <leader>fn :NERDTreeToggle<cr>
+nmap <leader>ff :FZF<cr>
+nmap <leader>fs :Ack!<Space>
 nmap <leader>cc gcc
 nmap <leader>c gc
 vmap <leader>c gc
-
-" Fugitive
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gb :Gblame<cr>
@@ -79,25 +103,8 @@ nmap <leader>gw :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gp :Gpush<cr> 
 nmap <leader>gg :Git<Space>
-
-" Gitgutter
 nmap <leader>gn ]c
 nmap <leader>gN [c
-
-" FZF Mappings
-nmap <leader>ff :FZF<cr>
-
-" vim-test Settings/Mappings
-let test#strategy = "neovim"
-nmap <silent> <leader>tn :TestNearest<CR>
-nmap <silent> <leader>tf :TestFile<CR>
-nmap <silent> <leader>ts :TestSuite<CR>
-nmap <silent> <leader>tl :TestLast<CR>
-nmap <silent> <leader>tv :TestVisit<CR>
-
-" Use ag
-nmap <leader>fs :Ack!<Space>
-let g:ackprg = 'ag --vimgrep'
 
 " Load machine local settings
 if filereadable(glob("~/.config/nvim/init.local.vim"))
