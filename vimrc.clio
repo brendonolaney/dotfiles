@@ -4,3 +4,6 @@ let test#enabled_runners = ["ruby#rspec"]
 " ALE Settings
 let g:ale_ruby_rubocop_options = "--config ~/clio/themis/.rubocop.yml"
 let g:ale_typescript_tslint_options = "--config ~/clio/themis/tlsint.json"
+
+map <leader>tj <C-w>s<C-w>j:terminal<cr>ayarn<Space>test:apollo:once<cr>
+
