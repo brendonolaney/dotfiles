@@ -61,21 +61,18 @@ let g:ackprg = 'ag --vimgrep'
 " My personal spacemacs-esque bindings
 " q - quit
 " w - write
-" e - edit
-" b - buffers, tabs, terminal
-" t - terminal and testing
-" f - file location
+" b - buffers, tabs, terminal, splits
+" t - testing
+" f - files
 " c - comments
 " g - git
 "
 map fd <esc>
 imap fd <esc>
-nmap <leader>q :q<cr>
-nmap <leader>Q :q!<cr>
+nmap <leader>qq :q<cr>
+nmap <leader>qa :qa<cr>
+nmap <leader>qw :qw<cr>
 nmap <leader>w :w<cr>
-nmap <leader>W :wq<cr>
-nmap <leader>e :e<Space>
-nmap <leader>E :e!<Space>
 nmap <leader>bl :ls<cr>
 nmap <leader>bN :bn<cr>
 nmap <leader>bP :bp<cr>
@@ -85,6 +82,9 @@ nmap <leader>bt :tabnew<cr>
 nmap <leader>bn gt
 nmap <leader>bp gT
 nmap <leader>bd :tabclose<cr>
+nmap <leader>bs :split<cr>
+nmap <leader>bv :vsplit<cr>
+nmap <leader>bb <C-w>=
 nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ts :TestSuite<CR>
