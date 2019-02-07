@@ -60,38 +60,37 @@ let g:ackprg = 'ag --vimgrep'
 " My personal spacemacs-esque bindings
 " q - quit
 " w - write
-" b - buffers, tabs, terminal, splits
-" t - testing
-" f - files
+" t - tabs and splits
+" r - running
+" f - files and buffers
 " c - comments
 " g - git
 "
 map fd <esc>
 imap fd <esc>
-nmap <leader>qq :q<cr>
-nmap <leader>qa :qa<cr>
-nmap <leader>qw :wq<cr>
+nmap <leader>q :q<cr>
 nmap <leader>w :w<cr>
-nmap <leader>bl :ls<cr>
-nmap <leader>bN :bn<cr>
-nmap <leader>bP :bp<cr>
-nmap <leader>bT <C-w>s<C-w>j:terminal<cr>a
-nmap <leader>bD :bd
-nmap <leader>bt :tabnew<cr>
-nmap <leader>bn gt
-nmap <leader>bp gT
-nmap <leader>bd :tabclose<cr>
-nmap <leader>bs :split<cr>
-nmap <leader>bv :vsplit<cr>
-nmap <leader>bb <C-w>=
-nmap <silent> <leader>tn :TestNearest<CR>
-nmap <silent> <leader>tf :TestFile<CR>
-nmap <silent> <leader>ts :TestSuite<CR>
-nmap <silent> <leader>tl :TestLast<CR>
-nmap <silent> <leader>tv :TestVisit<CR>
-nmap <leader>fn :NERDTreeToggle<cr>
+nmap <leader>tt :tabnew<cr>
+nmap <leader>tn gt
+nmap <leader>tp gT
+nmap <leader>td :tabclose<cr>
+nmap <leader>ts :split<cr>
+nmap <leader>tv :vsplit<cr>
+nmap <leader>tb <C-w>=
+nmap <silent> <leader>rn :TestNearest<cr>
+nmap <silent> <leader>rf :TestFile<cr>
+nmap <silent> <leader>rs :TestSuite<cr>
+nmap <silent> <leader>rl :TestLast<cr>
+nmap <silent> <leader>rv :TestVisit<cr>
+nmap <leader>rt <C-w>s<C-w>j:terminal<cr>a
+nmap <leader>rm :make<cr>
+nmap <leader>ft :NERDTreeToggle<cr>
 nmap <leader>ff :FZF<cr>
 nmap <leader>fs :Ack!<Space>
+nmap <leader>fl :ls<cr>
+nmap <leader>fn :bn<cr>
+nmap <leader>fp :bp<cr>
+nmap <leader>fd :bd
 nmap <leader>cc gcc
 nmap <leader>c gc
 vmap <leader>c gc
@@ -99,8 +98,9 @@ nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gb :Gblame<cr>
 nmap <leader>gw :Gwrite<cr>
+nmap <leader>gr :Gread<cr>
 nmap <leader>gc :Gcommit<cr>
-nmap <leader>gp :Gpush<cr> 
+nmap <leader>gp :Gpush<cr>
 nmap <leader>gg :Git<Space>
 nmap <leader>gn ]c
 nmap <leader>gN [c
