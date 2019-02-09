@@ -18,6 +18,7 @@ Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'ervandew/supertab'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }

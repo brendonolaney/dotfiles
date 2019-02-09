@@ -2,8 +2,15 @@
 let test#enabled_runners = ["ruby#rspec"]
 
 " ALE Settings
+let b:ale_linters = {
+\  'coffeescript': ['coffeelint'],
+\  'ruby': ['rubocop'],
+\  'typescript': ['tslint'],
+\}
+
 let g:ale_ruby_rubocop_options = "--config ~/clio/themis/.rubocop.yml"
 let g:ale_typescript_tslint_options = "--config ~/clio/themis/tlsint.json"
+let g:ale_coffeescript_coffeelint_options = "--rules ~/clio/themis/coffeelint.json"
 
-map <leader>tj <C-w>s<C-w>j:terminal<cr>ayarn<Space>test:apollo:once<cr>
+map <leader>rj <C-w>s<C-w>j:terminal<cr>ayarn<Space>test:apollo:once<cr>
 
