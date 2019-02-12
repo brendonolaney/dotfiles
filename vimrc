@@ -34,6 +34,7 @@ call plug#end()
 
 filetype plugin indent on
 syntax on
+let g:ale_completion_enabled = 1
 
 " Options
 set cursorline
