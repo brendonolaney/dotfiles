@@ -52,7 +52,6 @@ set softtabstop=2
 set tabstop=2
 
 " Plugin Settings
-let g:ale_completion_enabled = 1
 let test#strategy = "neovim"
 let g:ackprg = 'ag --vimgrep'
 
