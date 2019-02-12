@@ -57,20 +57,13 @@ let test#strategy = "neovim"
 let g:ackprg = 'ag --vimgrep'
 
 " Mappings
-"
-" My personal spacemacs-esque bindings
-" q - quit
-" w - write
-" t - tabs and splits
-" r - running
-" f - files and buffers
-" c - comments
-" g - git
-"
 map fd <esc>
 imap fd <esc>
+" quit
 nmap <leader>q :q<cr>
+" write
 nmap <leader>w :w<cr>
+" tab management
 nmap <leader>tt :tabnew<cr>
 nmap <leader>tn gt
 nmap <leader>tp gT
@@ -78,6 +71,7 @@ nmap <leader>td :tabclose<cr>
 nmap <leader>ts :split<cr>
 nmap <leader>tv :vsplit<cr>
 nmap <leader>tb <C-w>=
+" run external commands
 nmap <silent> <leader>rn :TestNearest<cr>
 nmap <silent> <leader>rf :TestFile<cr>
 nmap <silent> <leader>rs :TestSuite<cr>
@@ -85,6 +79,7 @@ nmap <silent> <leader>rl :TestLast<cr>
 nmap <silent> <leader>rv :TestVisit<cr>
 nmap <leader>rt <C-w>s<C-w>j:terminal<cr>a
 nmap <leader>rm :make<cr>
+" file manipulation
 nmap <leader>ft :NERDTreeToggle<cr>
 nmap <leader>ff :FZF<cr>
 nmap <leader>fs :Ack!<Space>
@@ -92,9 +87,11 @@ nmap <leader>fl :ls<cr>
 nmap <leader>fn :bn<cr>
 nmap <leader>fp :bp<cr>
 nmap <leader>fd :bd
+" commenting
 nmap <leader>cc gcc
 nmap <leader>c gc
 vmap <leader>c gc
+" git
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gb :Gblame<cr>
@@ -105,6 +102,9 @@ nmap <leader>gp :Gpush<cr>
 nmap <leader>gg :Git<Space>
 nmap <leader>gn ]c
 nmap <leader>gN [c
+" linter
+nmap <silent> <leader>lp <Plug>(ale_previous_wrap)
+nmap <silent> <leader>ln <Plug>(ale_next_wrap)
 
 " Load machine local settings
 if filereadable(glob("~/.config/nvim/init.local.vim"))
