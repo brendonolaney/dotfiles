@@ -13,7 +13,6 @@ set rtp +=/usr/local/opt/fzf
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'ervandew/supertab'
@@ -28,7 +27,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'w0rp/ale'
 
@@ -58,10 +56,6 @@ set tabstop=2
 let g:ale_completion_enabled = 1
 let test#strategy = "neovim"
 let g:ackprg = 'ag --vimgrep'
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='light'
-let g:solarized_termcolors=256
-colorscheme solarized
 
 " Mappings
 map fd <esc>
