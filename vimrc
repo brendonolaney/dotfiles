@@ -104,6 +104,8 @@ nmap <leader>gN [c
 " linter
 nmap <silent> <leader>lp <Plug>(ale_previous_wrap)
 nmap <silent> <leader>ln <Plug>(ale_next_wrap)
+nmap <leader>li :ALEHover<cr>
+nmap <leader>lg :ALEGoToDefinition<cr>
 
 " Load machine local settings
 if filereadable(glob("~/.config/nvim/init.local.vim"))

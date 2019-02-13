@@ -5,7 +5,7 @@ let test#enabled_runners = ["ruby#rspec"]
 let b:ale_linters = {
 \  'coffeescript': ['coffeelint'],
 \  'ruby': ['rubocop'],
-\  'typescript': ['tslint'],
+\  'typescript': ['tsserver', 'tslint'],
 \}
 
 let g:ale_ruby_rubocop_options = "--config ~/clio/themis/.rubocop.yml"
