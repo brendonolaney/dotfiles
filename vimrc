@@ -46,7 +46,6 @@ set showmode
 " Preferences
 set background=light
 set colorcolumn=120
-set mouse=a
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2

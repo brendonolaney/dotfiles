@@ -4,7 +4,7 @@ let test#enabled_runners = ["ruby#rspec"]
 " ALE Settings
 let b:ale_linters = {
 \  'coffeescript': ['coffeelint'],
-\  'ruby': ['rubocop'],
+\  'ruby': ['rubocop', 'ruby'],
 \  'typescript': ['tsserver', 'tslint'],
 \}
 
