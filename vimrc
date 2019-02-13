@@ -59,7 +59,9 @@ let g:ackprg = 'ag --vimgrep'
 map fd <esc>
 imap fd <esc>
 " quit
-nmap <leader>q :q<cr>
+nmap <leader>qq :q<cr>
+nmap <leader>qa :qa<cr>
+nmap <leader>qw :wq<cr>
 " write
 nmap <leader>w :w<cr>
 " tab management
@@ -86,6 +88,7 @@ nmap <leader>fl :ls<cr>
 nmap <leader>fn :bn<cr>
 nmap <leader>fp :bp<cr>
 nmap <leader>fd :bd<Space>
+nmap <leader>fe :e<Space>
 " commenting
 nmap <leader>cc gcc
 nmap <leader>c gc
