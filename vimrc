@@ -20,6 +20,7 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'eruby'] }
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
