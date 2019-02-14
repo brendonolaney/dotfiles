@@ -43,6 +43,7 @@ set number
 set ruler
 set showmatch
 set showmode
+set spell
 
 " Preferences
 set background=light
@@ -50,6 +51,7 @@ set colorcolumn=120
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
+set spelllang=en_ca
 
 " Plugin Settings
 let test#strategy = "neovim"
@@ -109,6 +111,10 @@ nmap <silent> <leader>lp <Plug>(ale_previous_wrap)
 nmap <silent> <leader>ln <Plug>(ale_next_wrap)
 nmap <leader>li :ALEHover<cr>
 nmap <leader>lg :ALEGoToDefinition<cr>
+" spelling
+nmap <leader>sn ]s
+nmap <leader>sp [s
+nmap <leader>sf z=
 
 " Load machine local settings
 if filereadable(glob("~/.config/nvim/init.local.vim"))
