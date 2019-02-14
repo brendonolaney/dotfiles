@@ -43,7 +43,6 @@ set number
 set ruler
 set showmatch
 set showmode
-set spell
 
 " Preferences
 set background=light
@@ -115,6 +114,8 @@ nmap <leader>lg :ALEGoToDefinition<cr>
 nmap <leader>sn ]s
 nmap <leader>sp [s
 nmap <leader>sf z=
+nmap <leader>sd :set nospell<cr>
+nmap <leader>se :set spell<cr>
 
 " Load machine local settings
 if filereadable(glob("~/.config/nvim/init.local.vim"))
