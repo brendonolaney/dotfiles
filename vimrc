@@ -45,6 +45,8 @@ set number
 set ruler
 set showmatch
 set showmode
+set notimeout
+set ttimeout
 
 " Preferences
 set background=light
