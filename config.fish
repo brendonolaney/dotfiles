@@ -19,6 +19,10 @@ alias ll='ls -lahF'
 alias mv='mv -i'
 alias rm='rm -i'
 
+if command -sq rbenv; and status --is-interactive
+  source (rbenv init -|psub)
+end
+
 if test -e ~/.config/fish/config.local.fish
   source ~/.config/fish/config.local.fish
 end
