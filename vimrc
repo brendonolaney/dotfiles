@@ -61,6 +61,8 @@ let g:ackprg = 'ag --vimgrep'
 " Mappings
 map fd <esc>
 imap fd <esc>
+map jk <esc>
+imap jk <esc>
 " quit
 nmap <leader>qq :q<cr>
 nmap <leader>qa :qa<cr>
