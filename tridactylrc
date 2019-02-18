@@ -1,0 +1,4 @@
+set searchengine duckduckgo
+guiset gui none
+
+map fd <Esc>

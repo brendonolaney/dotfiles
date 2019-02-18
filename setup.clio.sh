@@ -19,6 +19,10 @@ ln -sf "${SCRIPTDIR}/tmux.conf" "${HOME}/.tmux.conf"
 ln -sf "${SCRIPTDIR}/vimrc" "${HOME}/.config/nvim/init.vim"
 ln -sf "${SCRIPTDIR}/vimrc.clio" "${HOME}/.config/nvim/init.local.vim"
 
+# Tridactyl
+ln -sf "${SCRIPTDIR}/tridactylrc" "${HOME}/.tridactylrc"
+
+
 # Fish
 ln -sf "${SCRIPTDIR}/config.fish" "${HOME}/.config/fish/config.fish"
 ln -sf "${SCRIPTDIR}/config.clio.fish" "${HOME}/.config/fish/config.local.fish"
