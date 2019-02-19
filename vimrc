@@ -114,6 +114,7 @@ nmap <silent> <leader>lp <Plug>(ale_previous_wrap)
 nmap <silent> <leader>ln <Plug>(ale_next_wrap)
 nmap <leader>li :ALEHover<cr>
 nmap <leader>lg :ALEGoToDefinition<cr>
+nmap <leader>ld :ALEDetail<cr>
 " spelling
 nmap <leader>sn ]s
 nmap <leader>sp [s
