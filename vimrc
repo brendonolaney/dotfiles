@@ -56,6 +56,7 @@ set softtabstop=2
 set tabstop=2
 set spelllang=en_ca
 set showtabline=2
+set mouse=a
 
 " Plugin Settings
 let test#strategy = "neovim"
