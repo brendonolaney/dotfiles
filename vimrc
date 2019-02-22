@@ -61,7 +61,7 @@ set mouse=a
 " Plugin Settings
 let test#strategy = "neovim"
 let g:ackprg = 'ag --vimgrep'
-
+let g:SuperTabDefaultCompletionType = 'context'
 " Mappings
 map fd <esc>
 imap fd <esc>
