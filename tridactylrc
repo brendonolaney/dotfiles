@@ -1,4 +1,3 @@
 set searchengine duckduckgo
 guiset tabs always
 
-map fd <Esc>
