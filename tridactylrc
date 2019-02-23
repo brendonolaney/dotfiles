@@ -1,4 +1,4 @@
 set searchengine duckduckgo
-guiset gui none
+guiset tabs always
 
 map fd <Esc>
