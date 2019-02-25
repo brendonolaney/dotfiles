@@ -1,3 +1,4 @@
 set searchengine duckduckgo
+set editorcmd /Applications/VimR.app/Contents/MacOS/VimR -n --wait %f
 guiset tabs always
 
