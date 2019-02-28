@@ -16,7 +16,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'editorconfig/editorconfig'
-Plug 'ervandew/supertab'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
@@ -61,8 +60,6 @@ set mouse=a
 " Plugin Settings
 let test#strategy = "neovim"
 let g:ackprg = 'ag --vimgrep'
-let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabContextDefaultCompletionType = '<c-x><c-o>'
 " Mappings
 map fd <esc>
 imap fd <esc>
