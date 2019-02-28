@@ -1,3 +1,5 @@
 set searchengine duckduckgo
-guiset tabs always
+guiset_quiet gui none
+guiset_quiet tabs always
+guiset_quiet hoverlink left
 
