@@ -1,6 +1,5 @@
 set searchengine duckduckgo
 guiset_quiet gui none
-guiset_quiet tabs always
 guiset_quiet hoverlink left
 
 set editorcmd /Applications/VimR.app/Contents/MacOS/VimR -n --wait %f

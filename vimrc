@@ -22,7 +22,6 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'eruby'] }
 Plug 'mileszs/ack.vim'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
@@ -54,7 +53,6 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set spelllang=en_ca
-set showtabline=2
 set mouse=a
 
 " Plugin Settings
@@ -86,7 +84,6 @@ nmap <silent> <leader>rv :TestVisit<cr>
 nmap <leader>rt <C-w>s<C-w>j:terminal<cr>a
 nmap <leader>rm :make<cr>
 " file manipulation
-nmap <leader>ft :NERDTreeToggle<cr>
 nmap <leader>ff :FZF<cr>
 nmap <leader>fs :Ack!<Space>
 nmap <leader>fl :ls<cr>

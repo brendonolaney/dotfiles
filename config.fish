@@ -10,7 +10,7 @@ set -x PATH $HOME/Source/bin /usr/local/bin /usr/local/sbin {$PATH}
 
 set -x EDITOR nvim
 set -x VISUAL nvim
-alias vi=nvim
+alias vi=nvi
 alias vim=nvim
 
 alias cp='cp -i'
