@@ -5,3 +5,6 @@ guiset_quiet hoverlink left
 
 set editorcmd /Applications/VimR.app/Contents/MacOS/VimR -n --wait %f
 
+bind J tabprev
+bind K tabnext
+
