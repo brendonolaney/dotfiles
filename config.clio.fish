@@ -6,6 +6,7 @@ set -x GOPATH "$HOME/clio/themis/Go"
 set -x PATH "$GOPATH/bin:$PATH"
 
 alias cdr='cd ~/clio/themis'
+alias cdp='cd ~/clio/profiling'
 
 if status --is-interactive
   source (nodenv init - | psub)
