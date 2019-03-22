@@ -56,6 +56,7 @@ set tabstop=2
 set spelllang=en_ca
 set showtabline=2
 set mouse=a
+set foldmethod=syntax
 
 " Plugin Settings
 let test#strategy = "neovim"
@@ -64,15 +65,11 @@ let g:ackprg = 'ag --vimgrep'
 map fd <esc>
 imap fd <esc>
 " quit
-nmap <leader>qq :q<cr>
-nmap <leader>qa :qa<cr>
-nmap <leader>qw :wq<cr>
+nmap <leader>q :q<cr>
 " write
 nmap <leader>w :w<cr>
 " tab management
 nmap <leader>tt :tabnew<cr>
-nmap <leader>tn gt
-nmap <leader>tp gT
 nmap <leader>td :tabclose<cr>
 nmap <leader>ts :split<cr>
 nmap <leader>tv :vsplit<cr>
@@ -93,10 +90,8 @@ nmap <leader>fn :bn<cr>
 nmap <leader>fp :bp<cr>
 nmap <leader>fd :bd<Space>
 nmap <leader>fe :e<Space>
-" commenting
-nmap <leader>cc gcc
-nmap <leader>c gc
-vmap <leader>c gc
+nmap <leader>fr :e<cr>
+nmap <leader>fb :Lexplore
 " git
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
@@ -106,20 +101,17 @@ nmap <leader>gr :Gread<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gp :Gpush<cr>
 nmap <leader>gg :Git<Space>
-nmap <leader>gn ]c
-nmap <leader>gN [c
 " linter
 nmap <silent> <leader>lp <Plug>(ale_previous_wrap)
 nmap <silent> <leader>ln <Plug>(ale_next_wrap)
 nmap <leader>li :ALEHover<cr>
 nmap <leader>lg :ALEGoToDefinition<cr>
 nmap <leader>ld :ALEDetail<cr>
-" spelling
-nmap <leader>sn ]s
-nmap <leader>sp [s
-nmap <leader>sf z=
-nmap <leader>sd :set nospell<cr>
-nmap <leader>se :set spell<cr>
+" debugger
+nmap <leader>dp obinding.pry<esc>
+nmap <leader>dd odebugger;<esc>
+nmap <leader>dP Obinding.pry<esc>
+nmap <leader>dD Odebugger;<esc>
 
 " Load machine local settings
 if filereadable(glob("~/.config/nvim/init.local.vim"))
