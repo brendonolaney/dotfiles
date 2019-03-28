@@ -57,6 +57,7 @@ set spelllang=en_ca
 set showtabline=2
 set mouse=a
 set foldmethod=syntax
+set foldlevelstart=99
 
 " Plugin Settings
 let test#strategy = "neovim"
