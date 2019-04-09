@@ -58,9 +58,9 @@ set showtabline=2
 set mouse=a
 set foldmethod=syntax
 set foldlevelstart=99
-set statusline+=%<%f\ %h%m%r\ 
+set statusline+=%<%f\ 
 set statusline+=%{FugitiveStatusline()}
-set statusline+=%=%-14.(%l,%c%V%)\ %P\ 
+set statusline+=%h%m%r\ %=%-14.(%l,%c%V%)\ %P\ 
 
 " Plugin Settings
 let test#strategy = "neovim"
