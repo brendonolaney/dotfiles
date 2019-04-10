@@ -24,11 +24,13 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'eruby'] }
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'w0rp/ale'
 
