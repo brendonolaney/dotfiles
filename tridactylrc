@@ -3,6 +3,7 @@ guiset_quiet gui none
 guiset_quiet tabs always
 guiset_quiet hoverlink left
 
+set hintchars dhtnaoeuifgcrl',.pybm;qjkx
 set editorcmd /Applications/VimR.app/Contents/MacOS/VimR -n --wait %f
 
 bind J tabprev
