@@ -21,6 +21,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'eruby'] }
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mileszs/ack.vim'
@@ -62,26 +63,31 @@ set showtabline=2
 set mouse=a
 set foldmethod=syntax
 set foldlevelstart=99
+
+" Status Line
+"""""""""""""
+
+" File Name
 set statusline=%<%f\ 
+" Git status
 set statusline+=%{FugitiveStatusline()}
-set statusline+=%h%m%r\ %=%-14.(%l,%c%V%)\ %P\ 
+" File status
+set statusline+=%h%m%r\ 
+" White space
+set statusline+=%=
+" Tag generation status
+set statusline+=%{gutentags#statusline('[', ']')}\ 
+" Line and file position
+set statusline+=%-14.(%l,%c%V%)\ %P\ 
 
 " Plugin Settings
 let test#strategy = "neovim"
 let g:ackprg = 'ag --vimgrep'
 
-" file manipulation
+" Shortcuts
 nmap <leader>f :FZF<cr>
 nmap <leader>s :Ack!<Space>
-" linter
-nmap <silent> <leader>lp <Plug>(ale_previous_wrap)
-nmap <silent> <leader>ln <Plug>(ale_next_wrap)
-nmap <leader>li :ALEHover<cr>
-nmap <leader>lg :ALEGoToDefinition<cr>
-nmap <leader>ld :ALEDetail<cr>
-" debugger
-nmap <leader>dp obinding.pry<esc>
-nmap <leader>dd odebugger;<esc>
+nmap <leader>d obinding.pry<esc>
 
 " Load machine local settings
 if filereadable(glob("~/.config/nvim/init.local.vim"))
