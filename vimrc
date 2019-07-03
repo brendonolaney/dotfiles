@@ -21,7 +21,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'eruby'] }
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mileszs/ack.vim'
@@ -53,7 +53,7 @@ set notimeout
 set ttimeout
 
 " Preferences
-set background=light
+set background=dark
 set colorcolumn=120
 set shiftwidth=2
 set softtabstop=2
@@ -76,7 +76,7 @@ set statusline+=%h%m%r\
 " White space
 set statusline+=%=
 " Tag generation status
-set statusline+=%{gutentags#statusline()}\ 
+" set statusline+=%{gutentags#statusline()}\ 
 " Line and file position
 set statusline+=%-14.(%l,%c%V%)\ %P\ 
 

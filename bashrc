@@ -12,6 +12,12 @@ alias ll='ls -lahF'
 alias mv='mv -i'
 alias rm='rm -i'
 
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  GIT_PROMPT_ONLY_IN_REPO=1
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
 if [ -f "$HOME/.bashrc.local" ]; then
   # shellcheck disable=SC1090
   . "$HOME/.bashrc.local"

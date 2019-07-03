@@ -10,4 +10,6 @@ alias cdp='cd ~/clio/profiling'
 
 if status --is-interactive
   source (nodenv init - | psub)
+  set -x ARTIFACTORY_USERNAME (ruby -rcgi -e 'puts CGI::escape("brendon.olaney@clio.com")')
+  set -x ARTIFACTORY_API_KEY (ruby -rcgi -e 'puts CGI::escape("AKCp5cd5BbP8N8YkdWP5XZcRqMVYMoBx7DT9zwBKkt3WjqbUSWYtGhJhvy6SwULuYg5QR6dRy")')
 end

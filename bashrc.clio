@@ -1,7 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
 export RUBYLIB="$HOME/clio/themis/lib"
 export NODE_MODULES="$HOME/clio/themis/node_modules"
+ARTIFACTORY_USERNAME=$(ruby -rcgi -e 'puts CGI::escape("brendon.olaney@clio.com")')
+ARTIFACTORY_API_KEY=(ruby -rcgi -e 'puts CGI::escape("AKCp5cd5BbP8N8YkdWP5XZcRqMVYMoBx7DT9zwBKkt3WjqbUSWYtGhJhvy6SwULuYg5QR6dRy")')
+
+export ARTIFACTORY_USERNAME
+export ARTIFACTORY_API_KEY
 
 alias cdr='cd ~/clio/themis'
 
