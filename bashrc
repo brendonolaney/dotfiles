@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export PATH="$HOME/Source/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
 export EDITOR=nvim
@@ -15,11 +15,14 @@ alias rm='rm -i'
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
   GIT_PROMPT_ONLY_IN_REPO=1
+  export __GIT_PROMPT_DIR
+  export GIT_PROMPT_ONLY_IN_REPO
+  # shellcheck disable=SC1090
   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 if [ -f "$HOME/.bashrc.local" ]; then
   # shellcheck disable=SC1090
-  . "$HOME/.bashrc.local"
+  source "$HOME/.bashrc.local"
 fi
 
