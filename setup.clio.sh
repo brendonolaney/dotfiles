@@ -6,7 +6,8 @@ mkdir -p "${HOME}/.config/fish"
 mkdir -p "${HOME}/.config/nvim"
 
 # Bash
-ln -sf "${SCRIPTDIR}/bashrc" "${HOME}/.bash_profile"
+ln -sf "${SCRIPTDIR}/bash_profile" "${HOME}/.bash_profile"
+ln -sf "${SCRIPTDIR}/bashrc" "${HOME}/.bashrc"
 ln -sf "${SCRIPTDIR}/bashrc.clio" "${HOME}/.bashrc.local"
 
 # Nvi
