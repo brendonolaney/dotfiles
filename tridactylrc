@@ -2,7 +2,6 @@ set searchengine duckduckgo
 guiset_quiet gui full
 guiset_quiet statuspanel left
 
-set hintchars dhtnaoeuifgcrl',.pybm;qjkx
 set editorcmd /Applications/VimR.app/Contents/MacOS/VimR -n --wait %f
 
 bind J tabprev
