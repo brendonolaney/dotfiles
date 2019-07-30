@@ -20,7 +20,7 @@ if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   # shellcheck disable=SC2034
   __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
   # shellcheck disable=SC2034
-  GIT_PROMPT_ONLY_IN_REPO=1
+  GIT_PROMPT_ONLY_IN_REPO=0
   # shellcheck disable=SC1090
   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
@@ -31,5 +31,8 @@ fi
 
 # Load local system options
 # shellcheck disable=SC1090
-[ -f "$HOME/.bashrc.local" ] && source "$HOME/.bashrc.local"
+if [ -f "$HOME/.bashrc.local" ]
+then
+  source "$HOME/.bashrc.local"
+fi
 
