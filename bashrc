@@ -13,6 +13,8 @@ alias ll='ls -lahF'
 alias mv='mv -i'
 alias rm='rm -i'
 
+set -o vi
+
 eval "$(thefuck --alias)"
 
 # For bash git prompt
