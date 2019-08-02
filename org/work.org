@@ -1,16 +1,16 @@
 * Tasks
-** TODO Update Bill Index Performance Spreadsheet                      :work:
+** TODO Update Bill Index Performance Spreadsheet
    SCHEDULED: <2019-08-05 Mon ++1w>
    SCHEDULED: <2019-08-06 Tue ++1w>
    SCHEDULED: <2019-08-07 Wed ++1w>
    SCHEDULED: <2019-08-08 Thu ++1w>
    SCHEDULED: <2019-08-02 Fri ++1w>
 
-** TODO Weekly Health Check                                            :work:
+** TODO Weekly Health Check
    SCHEDULED: <2019-08-08 Thu +1w>
 
 * Invoicing
-** REVIEW INVOICE-515 (Voidable state backfill)                        :work:
+** REVIEW INVOICE-515 (Voidable state backfill)
    :PROPERTIES:
    :jira:
    :github:
@@ -24,7 +24,7 @@
    
 
 * Prod CA
-** IMPLEMENTING PRODCA-113 (Webhooks not running)                      :work:
+** IMPLEMENTING PRODCA-113 (Webhooks not running)
    :PROPERTIES:
    :jira:
    :github:
