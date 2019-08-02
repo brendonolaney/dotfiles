@@ -94,7 +94,8 @@
          use the main repo now, or make an upstream push etc.
    - [X] Tear down AWS infrastructure (it's expensive)
    - [ ] Get clarification on my involvement and how far down this
-         rabbit hole I should go.
+         rabbit hole I should go. Matthew, Remi, Tys, and Luke are
+	 resources.
      
    Kyle's goworker repo adds sentinel support. There was an attempt to
    get it added upstream but it was ignored. I devised a solution that
