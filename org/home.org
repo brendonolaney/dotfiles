@@ -1,5 +1,5 @@
 * Tasks
-** TODO Pack
+** DONE Pack
    SCHEDULED: <2019-08-02 Fri>
     
    Heading to the island for the long weekend!
@@ -31,9 +31,17 @@
 ** Morning Chores
 
 *** TODO Pill Meiko
-    SCHEDULED: <2019-08-02 Fri ++2d>
+    SCHEDULED: <2019-08-04 Sun ++2d>
+    :PROPERTIES:
+    :LAST_REPEAT: [2019-08-02 Fri 09:12]
+    :END:
+    - State "DONE"       from "TODO"       [2019-08-02 Fri 09:12]
 *** TODO Garbage and Recycling
-    SCHEDULED: <2019-08-02 Fri ++1w>
+    SCHEDULED: <2019-08-09 Fri ++1w>
+    :PROPERTIES:
+    :LAST_REPEAT: [2019-08-02 Fri 09:12]
+    :END:
+    - State "DONE"       from "TODO"       [2019-08-02 Fri 09:12]
 *** TODO Garbage
     SCHEDULED: <2019-08-05 Mon ++1w>
 *** TODO Recycling

@@ -1,33 +1,80 @@
 * Tasks
 ** TODO Update Bill Index Performance Spreadsheet
-   SCHEDULED: <2019-08-05 Mon ++1w>
-   SCHEDULED: <2019-08-06 Tue ++1w>
-   SCHEDULED: <2019-08-07 Wed ++1w>
-   SCHEDULED: <2019-08-08 Thu ++1w>
-   SCHEDULED: <2019-08-02 Fri ++1w>
+   SCHEDULED: <2019-08-12 Mon ++1w>
+   :PROPERTIES:
+   :LAST_REPEAT: [2019-08-02 Fri 09:20]
+   :END:
+   - State "DONE"       from "TODO"       [2019-08-02 Fri 09:20]
+   SCHEDULED: <2019-08-13 Tue ++1w>
+   SCHEDULED: <2019-08-14 Wed ++1w>
+   SCHEDULED: <2019-08-15 Thu ++1w>
+   SCHEDULED: <2019-08-09 Fri ++1w>
 
 ** TODO Weekly Health Check
    SCHEDULED: <2019-08-08 Thu +1w>
 
-* Invoicing
-** REVIEW INVOICE-515 (Voidable state backfill)
+
+*  Billing Index Performance Improvements
+  :PROPERTIES:
+  :issue:  https://github.com/clio/projects/issues/254
+  :END:
+
+** REVIEW INVOICE-515 Backfill voidable field in Bills
    :PROPERTIES:
-   :jira:
-   :github:
+   :ticket:       https://themis.atlassian.net/browse/INVOICE-515
+   :pull-request: https://github.com/clio/themis/pull/31996
    :END:
    
-   I initially implemented this, then Greg took over for a while
-   after I discovered bugs with his maintenance task frame work
-   but now I'm back in charge for the review tweak phase
+   I initially implemented this, then Greg took over for a while after
+   I discovered bugs with his maintenance task frame work but now I'm
+   back in charge for the review tweak phase
 
-   - [ ] First round of Tylers feedback
+   - [X] First round of Tyler's feedback
+   - [ ] Second round of Tyler's feedback
    
-
-* Prod CA
-** IMPLEMENTING PRODCA-113 (Webhooks not running)
+** ASSIGNED INVOICE-516 Use the saved voidable field when doing bill.voidable?
    :PROPERTIES:
-   :jira:
-   :github:
+   :ticket:       https://themis.atlassian.net/browse/INVOICE-516
+   :pull-request: 
+   :END:
+   
+** ASSIGNED INVOICE-517 Determine if there are still bills that have a NULL value for voidable
+   :PROPERTIES:
+   :ticket:       https://themis.atlassian.net/browse/INVOICE-517
+   :pull-request: 
+   :END:
+   
+** ASSIGNED INVOICE-518 UPDATE the voidable column to be NOT NULL
+   :PROPERTIES:
+   :ticket:       https://themis.atlassian.net/browse/INVOICE-518
+   :pull-request: 
+   :END:
+   
+** ASSIGNED INVOICE-539 Clean up the disable rollout invoice_384_voidable
+   :PROPERTIES:
+   :ticket:       https://themis.atlassian.net/browse/INVOICE-539
+   :pull-request: 
+   :END:
+   
+** TODO Weekly Update
+   SCHEDULED: <2019-08-09 Fri ++1w>
+   :PROPERTIES:
+   :LAST_REPEAT: [2019-08-02 Fri 15:26]
+   :END:
+
+   - State "DONE"       from "TODO"       [2019-08-02 Fri 15:26]
+** TODO Clear up Jira
+
+
+* Canadian region for Manage
+  :PROPERTIES:
+  :issue: https://github.com/clio/projects/issues/200
+  :END:
+
+** IMPLEMENTING PRODCA-112 (Webhooks not running)
+   :PROPERTIES:
+   :ticket:       https://themis.atlassian.net/browse/PRODCA-112
+   :pull-request:
    :END:
 
    - [X] Connect with Matthew King on next steps
@@ -42,8 +89,33 @@
    - [X] Determine how/when Sentinel is activated
    - [X] Don't enable Sentinel for ProdCA
    - [X] Come up with test plan
-   - [ ] Connect with Matthew King on validation and strategy
+   - [X] Connect with Matthew King on validation and strategy
+   - [X] Discern why we use kyle's repo for goworker, and if we can
+         use the main repo now, or make an upstream push etc.
+   - [X] Tear down AWS infrastructure (it's expensive)
+   - [ ] Get clarification on my involvement and how far down this
+         rabbit hole I should go.
+     
+   Kyle's goworker repo adds sentinel support. There was an attempt to
+   get it added upstream but it was ignored. I devised a solution that
+   adds an SSL parameter to the redis config (also added to the
+   goworker package by kyle) and uses the new redigo UseTLS option.
+   We also need to update which redigo package, and which
+   redis-sentinel package we use.
     
-* Insights
+** TODO Weekly Update
+   SCHEDULED: <2019-08-09 Fri ++1w>
+   :PROPERTIES:
+   :LAST_REPEAT: [2019-08-02 Fri 15:27]
+   :END:
+
+   - State "DONE"       from "TODO"       [2019-08-02 Fri 15:27]
+
+
+* LTR Metrics on Firm Health Dashboard
+  :PROPERTIES:
+  :issue:  https://github.com/clio/projects/issues/348
+  :END:
+
 - Onboarding
     
