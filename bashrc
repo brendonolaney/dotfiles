@@ -13,9 +13,11 @@ alias ll='ls -lahF'
 alias mv='mv -i'
 alias rm='rm -i'
 
+alias cds='cd ~/Source/dotfiles'
+
 set -o vi
 
-command -v thefuck && eval "$(thefuck --alias)"
+command -v thefuck>/dev/null && eval "$(thefuck --alias)"
 
 # For bash git prompt
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
