@@ -8,7 +8,7 @@
     
    yay!?
 
-** TODO Order Replacement Christmas Lights                             :home:
+** TODO Order Replacement Christmas Lights
    SCHEDULED: <2019-10-31 Thu>
 
 ** WAITING Order Replacement bulb for kitchen
@@ -25,6 +25,7 @@
 ** CANCELLED Order Travel Toiletries Roll
    - State "CANCELLED"  from "WAITING"    [2019-08-01 Thu 22:11] \\
      Decided to go with the spare packing cube that I have
+
 
 * Chores
 ** Morning Chores
