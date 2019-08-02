@@ -27,3 +27,6 @@ ln -sf "${SCRIPTDIR}/config.fish" "${HOME}/.config/fish/config.fish"
 # Org
 ln -sf "${SCRIPTDIR}/config.fish" "${HOME}/org"
 
+# Emacs
+ln -sf "${SCRIPTDIR}/emacs.d" "${HOME}/.emacs.d"
+
