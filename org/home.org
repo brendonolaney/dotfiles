@@ -1,33 +1,55 @@
-* Morning Chores
-
-** TODO Pill Meiko
-   SCHEDULED: <2019-08-02 Fri ++2d>
-** TODO Garbage and Recycling
-   SCHEDULED: <2019-08-02 Fri ++1w>
-** TODO Pack
+* Tasks
+** TODO Pack                                                           :home:
    SCHEDULED: <2019-08-02 Fri>
-** TODO Garbage
-   SCHEDULED: <2019-08-05 Mon ++1w>
-** TODO Recycling
-   SCHEDULED: <2019-08-06 Tue ++1w>
-  
-* Evening Chores
+    
+   Heading to the island for the long weekend!
 
 ** DONE Take another swing at Org-mode
-** TODO Laundry
-   SCHEDULED: <2019-08-05 Mon ++1w>
+    
+   yay!?
 
-** TODO Backup Photos
-   SCHEDULED: <2019-09-01 Sun ++1m>
-   :PROPERTIES:
-   :LAST_REPEAT: [2019-08-01 Thu 21:34]
-   :END:
-   - State "DONE"       from "TODO"       [2019-08-01 Thu 21:34]
-
-** TODO Order Replacement Christmas Lights
+** TODO Order Replacement Christmas Lights                             :home:
    SCHEDULED: <2019-10-31 Thu>
 
-** TODO Order Replacement bulb for kitchen
-** TODO Order Travel Toiletries Roll
-** TODO Order Cell phone case for Raelene
-** TODO Order Zinc Soap
+** WAITING Order Replacement bulb for kitchen
+   - State "WAITING"    from "WAITING"    [2019-08-01 Thu 22:10] \\
+     Waiting for money to become available
+** WAITING Order Cell phone case for Raelene
+   - State "WAITING"    from "WAITING"    [2019-08-01 Thu 22:11] \\
+     Waiting for money to become available
+** WAITING Order Zinc Soap
+ 
+
+   - State "WAITING"    from "WAITING"    [2019-08-01 Thu 22:12] \\
+     Waiting for money to become available
+** CANCELLED Order Travel Toiletries Roll
+   - State "CANCELLED"  from "WAITING"    [2019-08-01 Thu 22:11] \\
+     Decided to go with the spare packing cube that I have
+
+* Chores
+** Morning Chores
+
+*** TODO Pill Meiko                                                    :home:
+    SCHEDULED: <2019-08-02 Fri ++2d>
+*** TODO Garbage and Recycling                                         :home:
+    SCHEDULED: <2019-08-02 Fri ++1w>
+*** TODO Garbage                                                       :home:
+    SCHEDULED: <2019-08-05 Mon ++1w>
+*** TODO Recycling                                                     :home:
+    SCHEDULED: <2019-08-06 Tue ++1w>
+  
+
+** Evening Chores
+
+*** TODO Laundry                                                       :home:
+    SCHEDULED: <2019-08-05 Mon ++1w>
+
+*** TODO Backup Photos                                                 :home:
+    SCHEDULED: <2019-09-01 Sun ++1m>
+    :PROPERTIES:
+    :LAST_REPEAT: [2019-08-01 Thu 21:34]
+    :END:
+    - State "DONE"       from "TODO"       [2019-08-01 Thu 21:34]
+
+
+* Archive

@@ -8,7 +8,7 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d)")
 	(sequence "ASSIGNED(a)" "IMPLEMENTING(i)" "REVIEW(r)" "QA(q)" "DEPLOY(y)" "|" "COMPLETE(c)")
-	(sequence "WAITING(w)" "|" "CANCELLED(n)")))
+	(sequence "WAITING(w@)" "|" "CANCELLED(n@/!)")))
 
 (setq org-agenda-files (list "~/org/work.org"
                              "~/org/home.org"))

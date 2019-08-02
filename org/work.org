@@ -1,0 +1,49 @@
+* Tasks
+** TODO Update Bill Index Performance Spreadsheet                      :work:
+   SCHEDULED: <2019-08-05 Mon ++1w>
+   SCHEDULED: <2019-08-06 Tue ++1w>
+   SCHEDULED: <2019-08-07 Wed ++1w>
+   SCHEDULED: <2019-08-08 Thu ++1w>
+   SCHEDULED: <2019-08-02 Fri ++1w>
+
+** TODO Weekly Health Check                                            :work:
+   SCHEDULED: <2019-08-08 Thu +1w>
+
+* Invoicing
+** REVIEW INVOICE-515 (Voidable state backfill)                        :work:
+   :PROPERTIES:
+   :jira:
+   :github:
+   :END:
+   
+   I initially implemented this, then Greg took over for a while
+   after I discovered bugs with his maintenance task frame work
+   but now I'm back in charge for the review tweak phase
+
+   - [ ] First round of Tylers feedback
+   
+
+* Prod CA
+** IMPLEMENTING PRODCA-113 (Webhooks not running)                      :work:
+   :PROPERTIES:
+   :jira:
+   :github:
+   :END:
+
+   - [X] Connect with Matthew King on next steps
+   - [X] Set up elasticache/redis for simulation
+     - This means setting up a VPC, with a public and private
+       subnet, internet gateway, and a nat instance with public
+       IP configured to forward requests to an elasticache
+       (redis) cluster.
+   - [X] Document the above
+   - [X] Emulate Sentinels
+   - [ ] Create some webhooks and see if it works
+   - [X] Determine how/when Sentinel is activated
+   - [X] Don't enable Sentinel for ProdCA
+   - [X] Come up with test plan
+   - [ ] Connect with Matthew King on validation and strategy
+    
+* Insights
+- Onboarding
+    
