@@ -1,2 +1,4 @@
 tags
-emacs.d/elpa
+elpa/
+\#*\#
+*~

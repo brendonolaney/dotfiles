@@ -21,4 +21,5 @@
  )
 
 (require 'evil)
-(evil-mode t)
+
+(load-file "~/.emacs.d/prefs.el")

@@ -1,0 +1,33 @@
+* Morning Chores
+
+** TODO Pill Meiko
+   SCHEDULED: <2019-08-02 Fri ++2d>
+** TODO Garbage and Recycling
+   SCHEDULED: <2019-08-02 Fri ++1w>
+** TODO Pack
+   SCHEDULED: <2019-08-02 Fri>
+** TODO Garbage
+   SCHEDULED: <2019-08-05 Mon ++1w>
+** TODO Recycling
+   SCHEDULED: <2019-08-06 Tue ++1w>
+  
+* Evening Chores
+
+** DONE Take another swing at Org-mode
+** TODO Laundry
+   SCHEDULED: <2019-08-05 Mon ++1w>
+
+** TODO Backup Photos
+   SCHEDULED: <2019-09-01 Sun ++1m>
+   :PROPERTIES:
+   :LAST_REPEAT: [2019-08-01 Thu 21:34]
+   :END:
+   - State "DONE"       from "TODO"       [2019-08-01 Thu 21:34]
+
+** TODO Order Replacement Christmas Lights
+   SCHEDULED: <2019-10-31 Thu>
+
+** TODO Order Replacement bulb for kitchen
+** TODO Order Travel Toiletries Roll
+** TODO Order Cell phone case for Raelene
+** TODO Order Zinc Soap
