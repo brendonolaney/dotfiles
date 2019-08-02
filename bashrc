@@ -15,7 +15,7 @@ alias rm='rm -i'
 
 set -o vi
 
-eval "$(thefuck --alias)"
+command -v thefuck && eval "$(thefuck --alias)"
 
 # For bash git prompt
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
