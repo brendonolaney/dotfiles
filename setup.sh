@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 SCRIPTDIR=$PWD
 
@@ -23,4 +23,7 @@ ln -sf "${SCRIPTDIR}/tridactylrc" "${HOME}/.tridactylrc"
 
 # Fish
 ln -sf "${SCRIPTDIR}/config.fish" "${HOME}/.config/fish/config.fish"
+
+# Org
+ln -sf "${SCRIPTDIR}/config.fish" "${HOME}/org"
 
