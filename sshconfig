@@ -1,4 +1,4 @@
 Host junkyard
-  HostName 104.207.156.142
+  HostName 155.128.150.48
   User brendon
   IdentityFile ~/.ssh/brendon.pem
