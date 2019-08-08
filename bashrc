@@ -44,6 +44,9 @@ fi
 # Source thefuck
 command -v thefuck>/dev/null && eval "$(thefuck --alias)"
 
+# MOTD
+command -v ddate>/dev/null && ddate
+
 # Load local system options
 if [ -f "$HOME/.bashrc.local" ]
 then
