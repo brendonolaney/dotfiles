@@ -17,9 +17,8 @@ alias cds='cd ~/Source/dotfiles'
 
 set -o vi
 
-command -v thefuck>/dev/null && eval "$(thefuck --alias)"
 
-# For bash git prompt
+# Source bash git prompt
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   # shellcheck disable=SC2034
   __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
@@ -29,14 +28,26 @@ if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
-# For fzf keybindings
-# shellcheck disable=SC1090
-[ -f ~/.fzf.bash ] && source "$HOME/.fzf.bash"
+# Source bash completion
+if [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]]
+then
+  source "/usr/local/etc/profile.d/bash_completion.sh"
+fi
+
+# Source fzf keybindings
+if [ -f ~/.fzf.bash ]
+then
+  # shellcheck disable=SC1090
+  source "$HOME/.fzf.bash"
+fi
+
+# Source thefuck
+command -v thefuck>/dev/null && eval "$(thefuck --alias)"
 
 # Load local system options
-# shellcheck disable=SC1090
 if [ -f "$HOME/.bashrc.local" ]
 then
+  # shellcheck disable=SC1090
   source "$HOME/.bashrc.local"
 fi
 
