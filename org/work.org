@@ -1,55 +1,102 @@
 * Tasks
 
 ** TODO Update Bill Index Performance Spreadsheet
-   SCHEDULED: <2019-08-07 Wed +1d>
+   SCHEDULED: <2019-08-09 Fri +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-08-06 Tue 09:13]
-   :END:
+   :LAST_REPEAT: [2019-08-08 Thu 09:00]
+    :END:
+   - State "DONE"       from "TODO"       [2019-08-08 Thu 09:00]
+   - State "DONE"       from "TODO"       [2019-08-07 Wed 08:15]
    - State "DONE"       from "TODO"       [2019-08-06 Tue 09:13]
 ** TODO Weekly Health Check
-   SCHEDULED: <2019-08-08 Thu +1w>
+    SCHEDULED: <2019-08-15 Thu +1w>
+    :PROPERTIES:
+    :LAST_REPEAT: [2019-08-08 Thu 09:02]
+    :END:
 
+    - State "DONE"       from "TODO"       [2019-08-08 Thu 09:02]
+   
 
 *  Billing Index Performance Improvements
-  :PROPERTIES:
-  :issue:  https://github.com/clio/projects/issues/254
-  :END:
+   :PROPERTIES:
+   :issue:  https://github.com/clio/projects/issues/254
+   :END:
 
-** REVIEW INVOICE-515 Backfill voidable field in Bills
+** WAITING INVOICE-515 Backfill voidable field in Bills
    :PROPERTIES:
    :ticket:       https://themis.atlassian.net/browse/INVOICE-515
    :pull-request: https://github.com/clio/themis/pull/31996
    :END:
-   
+  
+   - State "WAITING"    from "DEPLOY"     [2019-08-07 Wed 16:51] \\
+     Waiting for the backfill task to complete before closing.
+     
    I initially implemented this, then Greg took over for a while after
    I discovered bugs with his maintenance task frame work but now I'm
    back in charge for the review tweak phase
 
    - [X] First round of Tyler's feedback
    - [X] Second round of Tyler's feedback
-     
+
    At this point we realized that we can't make the column NOT NULL if
    interest bills have a null value for voidable so I spoke with Ivy
    and we decided that it should be false.
-   
+
    - [X] Add interest bill handling to the backfill
+     
+   This worked well but it would be even better to assert this
+
+   - [X] Update interest bills to always make them unvoidable
+     
+   The deploy failed so I need to figure out why:
+   https://app.bugsnag.com/themis-solutions-inc/manage-invoicing/errors/5d4b3b3c7cbaf0001b6c8171?event_id=5d4b3b3c004ca9a24a7c0000&i=sk&m=nw&pivot_tab=event
+   
+   - [X] Fix the bug.
+
+   Look at eventstream factory, create one for bill, and write a spec.
+   
+   - [ ] Wait for the jobs to complete
+ 
+   search "Finished reenqueuing task Maintenance::BackfillBillVoidableStateJob" in slack
+   
+   - [ ] some stuff for polish: stuff that goes to slack also goes to graylog, figure out some useful params.
+   - [ ] Fix the status updates to op-job-progress
+
 
 *** DONE INVOICE-515 Add interest bills to voidable 
+    :PROPERTIES:
+    :ticket:       https://themis.atlassian.net/browse/INVOICE-515
+    :pull-request: https://github.com/clio/themis/pull/32160
+    :END:
+   
+*** DONE INVOICE-515 make interest bills always unvoidable
+    :PROPERTIES:
+    :ticket:       https://themis.atlassian.net/browse/INVOICE-515
+    :pull-request: https://github.com/clio/themis/pull/32189
+    :END:
+
+*** DONE INVOICE-515 Handle EventStream::ExpansionJob
+    :PROPERTIES:
+    :ticket:       https://themis.atlassian.net/browse/INVOICE-515
+    :pull-request: https://github.com/clio/themis/pull/32213
+    :END:
+
+    
+** IMPLEMENTING INVOICE-517 Determine if there are still bills that have a NULL value for voidable
    :PROPERTIES:
-   :ticket:       https://themis.atlassian.net/browse/INVOICE-515
-   :pull-request: https://github.com/clio/themis/pull/32160
+   :ticket:       https://themis.atlassian.net/browse/INVOICE-517
+   :pull-request: https://github.com/clio/themis/pull/32309
    :END:
    
-
+   I'm going to implement this as an admin report. We ran into issues
+   with N+1 queries because account accesses bills through the
+   `bill_fast` method which breaks a lot of activerecord's
+   optimizations. I decided to go with a straight up count of the
+   bills rather than grouping them by account for this reason.
+   
 ** ASSIGNED INVOICE-516 Use the saved voidable field when doing bill.voidable?
    :PROPERTIES:
    :ticket:       https://themis.atlassian.net/browse/INVOICE-516
-   :pull-request: 
-   :END:
-   
-** ASSIGNED INVOICE-517 Determine if there are still bills that have a NULL value for voidable
-   :PROPERTIES:
-   :ticket:       https://themis.atlassian.net/browse/INVOICE-517
    :pull-request: 
    :END:
    
@@ -60,10 +107,10 @@
    :END:
    
 ** ASSIGNED INVOICE-539 Clean up the disable rollout invoice_384_voidable
-   :PROPERTIES:
-   :ticket:       https://themis.atlassian.net/browse/INVOICE-539
-   :pull-request: 
-   :END:
+  :PROPERTIES:
+  :ticket:       https://themis.atlassian.net/browse/INVOICE-539
+  :pull-request: 
+  :END:
    
 ** TODO Weekly Invoicing Performance Update
    SCHEDULED: <2019-08-09 Fri ++1w>
@@ -71,12 +118,12 @@
    :LAST_REPEAT: [2019-08-02 Fri 15:26]
    :END:
 
-   - State "DONE"       from "TODO"       [2019-08-02 Fri 15:26]
+    - State "DONE"       from "TODO"       [2019-08-02 Fri 15:26]
 ** DONE Clear up Jira
-
+   
 ** Figure out what to do with this crap
-  https://themis.atlassian.net/browse/INVOICE-92
-  https://themis.atlassian.net/browse/INVOICE-143
+   https://themis.atlassian.net/browse/INVOICE-92
+   https://themis.atlassian.net/browse/INVOICE-143
   
 
 * Canadian region for Manage
@@ -92,10 +139,13 @@
 
    - [X] Connect with Matthew King on next steps
    - [X] Set up elasticache/redis for simulation
-     - This means setting up a VPC, with a public and private subnet,
-       internet gateway, and a nat instance with public IP configured
-       to forward requests to an elasticache
-     (redis) cluster.
+
+
+   This means setting up a VPC, with a public and private subnet,
+   internet gateway, and a nat instance with public IP configured
+   to forward requests to an elasticache
+   (redis) cluster.
+
    - [X] Document the above
    - [X] Emulate Sentinels
    - [ ] Create some webhooks and see if it works
@@ -103,19 +153,24 @@
    - [X] Don't enable Sentinel for ProdCA
    - [X] Come up with test plan
    - [X] Connect with Matthew King on validation and strategy
-   - [X] Discern why we use kyle's repo for goworker, and if we can use
-         the main repo now, or make an upstream push etc.
+   - [X] Discern why we use kyle's repo for goworker.
+   
+   can we use the main repo now, or make an upstream push etc?
+
    - [X] Tear down AWS infrastructure (it's expensive)
-   - [X] Get clarification on my involvement and how far down this rabbit hole
-         I should go. Matthew, Remi, Tys, and Luke are resources.
-   - [ ] Import goworker into themis, and alter it to work with redis-sentinel
      
    Kyle's goworker repo adds sentinel support. There was an attempt to
    get it added upstream but it was ignored. I devised a solution that
    adds an SSL parameter to the redis config (also added to the
-   goworker package by kyle) and uses the new redigo UseTLS option.
-   We also need to update which redigo package, and which
-   redis-sentinel package we use.
+   goworker package by kyle) and uses the new redigo UseTLS option. We
+   also need to update which redigo package, and which redis-sentinel
+   package we use.
+
+   - [X] Get clarification on my involvement and how far I should go.
+    
+   Matthew, Remi, Tys, and Luke are resources.
+
+   - [ ] Import goworker into themis, and alter it to work with redis-sentinel
     
 ** TODO Weekly ProdCA Update
    SCHEDULED: <2019-08-09 Fri ++1w>
