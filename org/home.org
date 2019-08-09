@@ -31,10 +31,11 @@
 ** Morning Chores
 
 *** TODO Pill Meiko
-    SCHEDULED: <2019-08-04 Sun ++2d>
+    SCHEDULED: <2019-08-10 Sat ++2d>
     :PROPERTIES:
-    :LAST_REPEAT: [2019-08-02 Fri 09:12]
+    :LAST_REPEAT: [2019-08-08 Thu 21:50]
     :END:
+    - State "DONE"       from "TODO"       [2019-08-08 Thu 21:50]
     - State "DONE"       from "TODO"       [2019-08-02 Fri 09:12]
 *** TODO Garbage and Recycling
     SCHEDULED: <2019-08-09 Fri ++1w>
@@ -43,16 +44,28 @@
     :END:
     - State "DONE"       from "TODO"       [2019-08-02 Fri 09:12]
 *** TODO Garbage
-    SCHEDULED: <2019-08-05 Mon ++1w>
+    SCHEDULED: <2019-08-12 Mon ++1w>
+    :PROPERTIES:
+    :LAST_REPEAT: [2019-08-08 Thu 21:50]
+    :END:
+    - State "DONE"       from "TODO"       [2019-08-08 Thu 21:50]
 *** TODO Recycling
-    SCHEDULED: <2019-08-06 Tue ++1w>
+    SCHEDULED: <2019-08-13 Tue ++1w>
+    :PROPERTIES:
+    :LAST_REPEAT: [2019-08-08 Thu 21:50]
+    :END:
   
 
+    - State "DONE"       from "TODO"       [2019-08-08 Thu 21:50]
 ** Evening Chores
 
 *** TODO Laundry
-    SCHEDULED: <2019-08-05 Mon ++1w>
+    SCHEDULED: <2019-08-12 Mon ++1w>
+    :PROPERTIES:
+    :LAST_REPEAT: [2019-08-08 Thu 21:52]
+    :END:
 
+    - State "DONE"       from "TODO"       [2019-08-08 Thu 21:52]
 *** TODO Backup Photos
     SCHEDULED: <2019-09-01 Sun ++1m>
     :PROPERTIES:
