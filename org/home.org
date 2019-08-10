@@ -38,10 +38,11 @@
     - State "DONE"       from "TODO"       [2019-08-08 Thu 21:50]
     - State "DONE"       from "TODO"       [2019-08-02 Fri 09:12]
 *** TODO Garbage and Recycling
-    SCHEDULED: <2019-08-09 Fri ++1w>
+    SCHEDULED: <2019-08-16 Fri ++1w>
     :PROPERTIES:
-    :LAST_REPEAT: [2019-08-02 Fri 09:12]
+    :LAST_REPEAT: [2019-08-09 Fri 09:24]
     :END:
+    - State "DONE"       from "TODO"       [2019-08-09 Fri 09:24]
     - State "DONE"       from "TODO"       [2019-08-02 Fri 09:12]
 *** TODO Garbage
     SCHEDULED: <2019-08-12 Mon ++1w>

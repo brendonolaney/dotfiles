@@ -1,10 +1,11 @@
 * Tasks
 
-** TODO Update Bill Index Performance Spreadsheet
-   SCHEDULED: <2019-08-09 Fri +1d>
+** TODO Update Bill Index Performan Spreadsheet
+   SCHEDULED: <2019-08-10 Sat +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-08-08 Thu 09:00]
+   :LAST_REPEAT: [2019-08-09 Fri 09:21]
     :END:
+   - State "DONE"       from "TODO"       [2019-08-09 Fri 09:21]
    - State "DONE"       from "TODO"       [2019-08-08 Thu 09:00]
    - State "DONE"       from "TODO"       [2019-08-07 Wed 08:15]
    - State "DONE"       from "TODO"       [2019-08-06 Tue 09:13]
@@ -17,7 +18,7 @@
     - State "DONE"       from "TODO"       [2019-08-08 Thu 09:02]
    
 
-*  Billing Index Performance Improvements
+* Billing Index Performance Improvements
    :PROPERTIES:
    :issue:  https://github.com/clio/projects/issues/254
    :END:
@@ -55,12 +56,21 @@
 
    Look at eventstream factory, create one for bill, and write a spec.
    
+   After we kicked off the backfull task, we started to notice
+   transient spec failures that seem to be related to threading issues
+   with the backfill task so I implemented a thread safe method of
+   accomplishing this
+
    - [ ] Wait for the jobs to complete
  
-   search "Finished reenqueuing task Maintenance::BackfillBillVoidableStateJob" in slack
+   Search "Finished reenqueuing task Maintenance::BackfillBillVoidableStateJob" in slack
    
-   - [ ] some stuff for polish: stuff that goes to slack also goes to graylog, figure out some useful params.
+   - [ ] Some stuff for polish: stuff that goes to slack also goes to graylog, figure out some useful params.
+         Log to gray log current iterations and total and envitonment name (prod-us etc..) and shard name
+	 [ class name ] currently processing at...
    - [ ] Fix the status updates to op-job-progress
+   - [ ] use update column
+   - [ ] wrap in begin rescue standard error log to graylog "for bill id x got error" then continue.
 
 
 *** DONE INVOICE-515 Add interest bills to voidable 
@@ -82,7 +92,7 @@
     :END:
 
     
-** IMPLEMENTING INVOICE-517 Determine if there are still bills that have a NULL value for voidable
+** DEPLOY INVOICE-517 Determine if there are still bills that have a NULL value for voidable
    :PROPERTIES:
    :ticket:       https://themis.atlassian.net/browse/INVOICE-517
    :pull-request: https://github.com/clio/themis/pull/32309
@@ -93,6 +103,12 @@
    `bill_fast` method which breaks a lot of activerecord's
    optimizations. I decided to go with a straight up count of the
    bills rather than grouping them by account for this reason.
+   
+** DEPLOY Clean up the invoice_384_update_voidable_state rollout
+  :PROPERTIES:
+  :ticket:       
+  :pull-request: https://github.com/clio/themis/pull/32309
+  :END:
    
 ** ASSIGNED INVOICE-516 Use the saved voidable field when doing bill.voidable?
    :PROPERTIES:
@@ -111,19 +127,25 @@
   :ticket:       https://themis.atlassian.net/browse/INVOICE-539
   :pull-request: 
   :END:
-   
 ** TODO Weekly Invoicing Performance Update
-   SCHEDULED: <2019-08-09 Fri ++1w>
+   SCHEDULED: <2019-08-16 Fri ++1w>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-08-02 Fri 15:26]
+   :LAST_REPEAT: [2019-08-09 Fri 09:26]
    :END:
 
+    - State "DONE"       from "TODO"       [2019-08-09 Fri 09:26]
     - State "DONE"       from "TODO"       [2019-08-02 Fri 15:26]
+      
+      
+
 ** DONE Clear up Jira
    
-** Figure out what to do with this crap
+** Clean Up
    https://themis.atlassian.net/browse/INVOICE-92
    https://themis.atlassian.net/browse/INVOICE-143
+   https://themis.atlassian.net/browse/INVOICE-699
+   https://themis.atlassian.net/browse/INVOICE-701
+   https://themis.atlassian.net/browse/INVOICE-703
   
 
 * Canadian region for Manage
@@ -173,11 +195,12 @@
    - [ ] Import goworker into themis, and alter it to work with redis-sentinel
     
 ** TODO Weekly ProdCA Update
-   SCHEDULED: <2019-08-09 Fri ++1w>
+   SCHEDULED: <2019-08-16 Fri ++1w>
    :PROPERTIES:
-   :LAST_REPEAT: [2019-08-02 Fri 15:27]
+   :LAST_REPEAT: [2019-08-09 Fri 09:26]
    :END:
 
+   - State "DONE"       from "TODO"       [2019-08-09 Fri 09:26]
    - State "DONE"       from "TODO"       [2019-08-02 Fri 15:27]
 
 
