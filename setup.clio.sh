@@ -28,9 +28,6 @@ ln -sf "${SCRIPTDIR}/tridactylrc" "${HOME}/.tridactylrc"
 ln -sf "${SCRIPTDIR}/config.fish" "${HOME}/.config/fish/config.fish"
 ln -sf "${SCRIPTDIR}/config.clio.fish" "${HOME}/.config/fish/config.local.fish"
 
-# Org
-ln -sf "${SCRIPTDIR}/org" "${HOME}/org"
-
 # Emacs
 ln -sf "${SCRIPTDIR}/emacs.d" "${HOME}/.emacs.d"
 
