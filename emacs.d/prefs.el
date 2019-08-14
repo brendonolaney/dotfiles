@@ -12,4 +12,7 @@
 
 (setq org-agenda-files (list "~/Org/work.org"
                              "~/Org/home.org"))
+(setq org-default-notes-file "~/Org/inbox.org")
+
+(global-set-key (kbd "C-c c") 'org-capture)
 
