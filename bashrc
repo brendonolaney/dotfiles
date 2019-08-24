@@ -15,9 +15,6 @@ alias rm='rm -i'
 
 alias cds='cd ~/Source/dotfiles'
 
-set -o vi
-
-
 # Source bash git prompt
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   # shellcheck disable=SC2034
@@ -43,9 +40,6 @@ fi
 
 # Source thefuck
 command -v thefuck>/dev/null && eval "$(thefuck --alias)"
-
-# MOTD
-command -v ddate>/dev/null && ddate
 
 # Load local system options
 if [ -f "$HOME/.bashrc.local" ]
