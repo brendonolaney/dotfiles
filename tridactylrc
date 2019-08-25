@@ -1,10 +1,110 @@
+sanitise tridactyllocal tridactylsync
+
 set searchengine duckduckgo
 guiset_quiet gui full
 guiset_quiet statuspanel left
 
+" QWERTY hintchars
 set hintchars hjklasdfgyuiopqwertnmzxcvb
+" DVORAK hintchars
+" set hintchars dhtnsaoeuifgcrlpyfbmwvzqjkx
+
 set editorcmd /Applications/VimR.app/Contents/MacOS/VimR -n --wait %f
 
-bind J tabprev
-bind K tabnext
+" ErgoVim Bindings
 
+
+" <S-Insert>: mode ignore,
+" <CA-Escape>: mode ignore,
+" <CA-`>: mode ignore,
+" <S-Escape>: mode ignore,
+" <Escape>: composite mode normal ; hidecmdline,
+" <C-[>: composite mode normal ; hidecmdline,
+
+" Movement Group
+
+bind k scrollline 10
+bind K scrollpage 0.5
+bind i scrollline -10
+bind I scrollpage -0.5
+bind l scrollpx 50
+bind L scrollto 100
+bind j scrollpx -50
+bind J scrollto 0
+
+bind H fillcmdline taball
+bind h fillcmdline tab
+
+bind y stop
+bind u tabprev
+bind U back
+bind o tabnext
+bind O forward
+bind p reload
+bind P reloadhard
+
+bind n zoom 0.1 true
+bind N zoom 0.5 true
+bind m zoom -0.1 true
+bind M zoom -0.5 true
+bind , zoom 3
+"bind < zoom 1
+bind <C-,> zoom 0.3
+
+bind ; fillcmdline_notrail,
+
+" Navigation Group
+
+bind f hint
+bind F fillcmdline open
+bind <C-f> currenturl open
+
+bind d hint -t
+bind D fillcmdline tabopen
+bind <C-d> currenturl tabopen
+
+bind s hint -w
+bind S fillcmdline winopen
+bind <C-s> currenturl winopen
+
+bind a hint -s
+bind A hint -S
+
+bind q hint -qb
+bind Q hint -qS
+bind <C-q> hint -qs
+
+bind r hint -y  " yank link
+bind R hint -p  " yank text
+bind e hint -i  " open image
+bind E hint -I  " image in new tab
+bind w hint -w mpvsafe  " video link
+
+bind z undo
+bind x tabclose
+bind c clipboard yank
+bind v clipboard open
+bind V clipboard tabopen
+
+" <A-p>: pin,
+" <A-m>: mute toggle,
+" s: fillcmdline open search,
+" S: fillcmdline tabopen search,
+" gh: home,
+" gH: home true,
+" gi: focusinput -l,
+" g0: tabfirst,
+" g$: tablast,
+" gr: reader,
+"
+" Insert mode
+" <Escape>: composite unfocus | mode normal,
+" <C-[>: composite unfocus | mode normal,
+" <C-i>: editor,
+" <CA-Escape>: mode normal,
+" <CA-`>: mode normal,
+" <C-6>: tab #,
+" <C-^>: tab #,
+" <S-Escape>:
+
+" vim: set filetype=vim:
