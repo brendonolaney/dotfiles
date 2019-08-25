@@ -27,6 +27,6 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
 call plug#end()
 
-let test#strategy = "neovim"
-let g:ackprg = 'ag --vimgrep'
-
+let test#strategy = "neovim"  " Tests run in a neovim terminal
+let g:ackprg = 'ag --vimgrep'  " Use ag instead of ack
+set rtp +=/usr/local/opt/fzf  " Let vim know where FZF is
