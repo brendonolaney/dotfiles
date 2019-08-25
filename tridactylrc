@@ -11,22 +11,57 @@ set hintchars hjklasdfgyuiopqwertnmzxcvb
 
 set editorcmd /Applications/VimR.app/Contents/MacOS/VimR -n --wait %f
 
-" ErgoVim Bindings
+" Ergodactyl mappings
 
+" -- Ignore mode bindings --
 
-" <S-Insert>: mode ignore,
-" <CA-Escape>: mode ignore,
-" <CA-`>: mode ignore,
-" <S-Escape>: mode ignore,
-" <Escape>: composite mode normal ; hidecmdline,
-" <C-[>: composite mode normal ; hidecmdline,
+" bind <S-Insert> mode ignore
+" bind <CA-Escape> mode ignore
+" bind <CA-`> mode ignore
+" bind <S-Escape> mode ignore
+" bind <Escape> composite mode normal ; hidecmdline
+" bind <C-[> composite mode normal ; hidecmdline
 
-" Movement Group
+" -- Insert mode bindings --
 
-bind k scrollline 10
-bind K scrollpage 0.5
+" bind <Escape> composite unfocus | mode normal
+" bind <C-[> composite unfocus | mode normal
+" bind <C-i> editor
+" bind <CA-Escape> mode normal
+" bind <CA-`> mode normal
+" bind <C-6> tab #
+" bind <C-^> tab #
+" bind <S-Escape> mode ignore
+
+" -- Ex mode bindings --
+
+" bind <Enter> ex.accept_line
+" bind <C-j> ex.accept_line
+" bind <C-m> ex.accept_line
+" bind <Escape> ex.hide_and_clear
+" bind <ArrowUp> ex.prev_history
+" bind <ArrowDown> ex.next_history
+" bind <C-a> text.beginning_of_line
+" bind <C-e> text.end_of_line
+" bind <C-u> text.backward_kill_line
+" bind <C-k> text.kill_line
+" bind <C-c> text.kill_whole_line
+" bind <C-f> ex.complete
+bind <C-n> ex.next_completion
+bind <C-p> ex.prev_completion
+" bind <Space> ex.insert_space_or_completion
+
+" -- Insert bindings --
+
+" bind <Tab> focusinput -n
+" bind <S-Tab> focusinput -N
+
+" -- Movement bindings --
+
 bind i scrollline -10
 bind I scrollpage -0.5
+bind k scrollline 10
+bind K scrollpage 0.5
 bind l scrollpx 50
 bind L scrollto 100
 bind j scrollpx -50
@@ -34,12 +69,11 @@ bind J scrollto 0
 
 bind H fillcmdline taball
 bind h fillcmdline tab
-
 bind y stop
-bind u tabprev
-bind U back
+bind u back
+bind U forward
 bind o tabnext
-bind O forward
+bind O tabprev
 bind p reload
 bind P reloadhard
 
@@ -50,59 +84,120 @@ bind M zoom -0.5 true
 bind , zoom 1
 
 bind ; fillcmdline_notrail
+" bind : fillcmdline_notrail
+
+" bind M gobble 1 quickmark
+" bind B fillcmdline taball
+" bind b fillcmdline tab
+
+" bind ]] followpage next
+" bind [[ followpage prev
+" bind [c urlincrement -1
+" bind ]c urlincrement 1
+" bind <C-x> urlincrement -1
+" bind <C-a> urlincrement 1
+" bind <C-6> tab #
+" bind <C-^> tab #
+" bind <C-o> jumpprev
+" bind <C-i> jumpnext
+" bind << tabmove -1
+" bind >> tabmove +1
+
+" bind gh home
+" bind gH home true
+" bind gi focusinput -l
+" bind g? rot13
+" bind g; changelistjump -1
+" bind gt tabnext_gt
+" bind gT tabprev
+" bind g^ tabfirst
+" bind g0 tabfirst
+" bind g$ tablast
+" bind gr reader
+" bind gu urlparent
+" bind gU urlroot
+" bind gf viewsource
 
 " Navigation Group
+bind q repeat
 
 bind f hint
-bind F fillcmdline open
-bind <C-f> current_url open
+bind F hint -t
+bind <C-f> hint -b
 
-bind d hint -t
+bind d fillcmdline open
 bind D fillcmdline tabopen
-bind <C-d> current_url tabopen
 
-bind s hint -w
-bind S fillcmdline winopen
-bind <C-s> current_url winopen
+bind s currenturl open
+bind S currenturl tabopen
 
-bind a hint -s
-bind A hint -S
-
-bind q hint -qb
-bind Q hint -qS
-bind <C-q> hint -qs
+bind a hint -qb  " open many
 
 bind r hint -y  " yank link
 bind R hint -p  " yank text
 bind e hint -i  " open image
 bind E hint -I  " image in new tab
-bind w hint -w mpvsafe  " video link
+bind w hint -W mpvsafe  " video link
+
+" bind ;k hint -k
+" bind ;P hint -P
+" bind ;r hint -r
+" bind ;s hint -s
+" bind ;S hint -S
+" bind ;a hint -a
+" bind ;A hint -A
+" bind ;; hint -;
+" bind ;# hint -#
+" bind ;z hint -z
+" bind ;gi hint -qi
+" bind ;gI hint -qI
+" bind ;gk hint -qk
+" bind ;gy hint -qy
+" bind ;gp hint -qp
+" bind ;gP hint -qP
+" bind ;gr hint -qr
+" bind ;ga hint -qa
+" bind ;gA hint -qA
+" bind ;g; hint -q;
+" bind ;g# hint -q#
+" bind ;gv hint -qW mpvsafe
+" bind ;gw hint -qw
+" bind ;gb hint -qb
 
 bind z undo
-bind x tabclose
-bind c clipboard yank
+bind Z undo window
+bind x clipboard yank; tabclose
+bind X clipboard yank; composite tabprev; tabclose #
+bind cc clipboard yank
+bind cs clipboard yankshort
+bind cc clipboard yankcanon
+bind cm clipboard yankmd
+bind ct clipboard yanktitle
 bind v clipboard open
 bind V clipboard tabopen
 
-" <A-p>: pin,
-" <A-m>: mute toggle,
-" s: fillcmdline open search,
-" S: fillcmdline tabopen search,
-" gh: home,
-" gH: home true,
-" gi: focusinput -l,
-" g0: tabfirst,
-" g$: tablast,
-" gr: reader,
-"
-" Insert mode
-" <Escape>: composite unfocus | mode normal,
-" <C-[>: composite unfocus | mode normal,
-" <C-i>: editor,
-" <CA-Escape>: mode normal,
-" <CA-`>: mode normal,
-" <C-6>: tab #,
-" <C-^>: tab #,
-" <S-Escape>:
+" bind a current_url bmark
+" bind A bmark
+
+" bind gx0 tabclosealltoleft
+" bind gx$ tabclosealltoright
+" bind <A-p> pin
+" bind <A-m> mute toggle
+" bind <F1> help
+" bind ZZ qall
+
+" bind <S-Insert> mode ignore
+" bind <CA-Escape> mode ignore
+" bind <CA-`> mode ignore
+" bind <S-Escape> mode ignore
+" bind <Escape> composite mode normal ; hidecmdline
+" bind <C-[> composite mode normal ; hidecmdline
+
+" find mode not suitable for general consumption yet.
+" bind / fillcmdline find
+" bind ? fillcmdline find -?
+" bind n findnext 1
+" bind N findnext -1
+" bind <Space> nohlsearch
 
 " vim: set filetype=vim:
