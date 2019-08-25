@@ -15,6 +15,8 @@ alias rm='rm -i'
 
 alias cds='cd ~/Source/dotfiles'
 
+set -o emacs
+
 if [[ -r "/usr/local/opt/zsh-git-prompt/zshrc.sh" ]]
 then
   source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
