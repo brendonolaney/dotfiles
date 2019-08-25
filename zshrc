@@ -1,5 +1,10 @@
 #!/bin/zsh
 
+HISTFILE=~/.zhistory
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
+
 export PATH="${HOME}/Source/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
 export EDITOR=nvim
 export VISUAL=nvim
