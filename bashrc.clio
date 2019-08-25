@@ -1,6 +1,3 @@
 #!/bin/bash
 
 alias cdr='cd ~/clio/themis'
-
-source "$HOME/.clio_profile"
-

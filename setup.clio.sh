@@ -3,7 +3,7 @@
 SCRIPTDIR=$PWD
 
 # Bash
-ln -sf "${SCRIPTDIR}/bash_profile" "${HOME}/.bash_profile"
+ln -sf "${SCRIPTDIR}/bash_profile.clio" "${HOME}/.bash_profile"
 ln -sf "${SCRIPTDIR}/bashrc" "${HOME}/.bashrc"
 ln -sf "${SCRIPTDIR}/bashrc.clio" "${HOME}/.bashrc.local"
 
@@ -21,4 +21,3 @@ ln -sf "${SCRIPTDIR}/tridactylrc" "${HOME}/.tridactylrc"
 
 # Emacs
 ln -sf "${SCRIPTDIR}/emacs.d" "${HOME}/.emacs.d"
-
