@@ -47,25 +47,23 @@ bind n zoom 0.1 true
 bind N zoom 0.5 true
 bind m zoom -0.1 true
 bind M zoom -0.5 true
-bind , zoom 3
-"bind < zoom 1
-bind <C-,> zoom 0.3
+bind , zoom 1
 
-bind ; fillcmdline_notrail,
+bind ; fillcmdline_notrail
 
 " Navigation Group
 
 bind f hint
 bind F fillcmdline open
-bind <C-f> currenturl open
+bind <C-f> current_url open
 
 bind d hint -t
 bind D fillcmdline tabopen
-bind <C-d> currenturl tabopen
+bind <C-d> current_url tabopen
 
 bind s hint -w
 bind S fillcmdline winopen
-bind <C-s> currenturl winopen
+bind <C-s> current_url winopen
 
 bind a hint -s
 bind A hint -S
