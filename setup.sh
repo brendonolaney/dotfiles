@@ -10,13 +10,11 @@ ln -sf "${SCRIPTDIR}/bash_profile" "${HOME}/.bash_profile"
 ln -sf "${SCRIPTDIR}/tmux.conf" "${HOME}/.tmux.conf"
 
 # Vim
-VIMDIR="${HOME}/.config/nvim"
-mkdir -p "${VIMDIR}"
-ln -sf "${SCRIPTDIR}/nvim" "${VIMDIR}/"
+mkdir -p "${HOME}/.config"
+ln -sf "${SCRIPTDIR}/nvim" "${HOME}/.config/nvim"
 
 # Tridactyl
 ln -sf "${SCRIPTDIR}/tridactylrc" "${HOME}/.tridactylrc"
 
 # Emacs
 ln -sf "${SCRIPTDIR}/emacs.d" "${HOME}/.emacs.d"
-

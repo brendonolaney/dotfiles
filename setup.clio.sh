@@ -12,8 +12,8 @@ ln -sf "${SCRIPTDIR}/tmux.conf" "${HOME}/.tmux.conf"
 
 # Vim
 VIMDIR="${HOME}/.config/nvim"
-mkdir -p "${VIMDIR}"
-ln -sf "${SCRIPTDIR}/nvim" "${VIMDIR}/"
+mkdir -p "${HOME}/.config"
+ln -sf "${SCRIPTDIR}/nvim" "${HOME}/.config/nvim"
 ln -sf "${VIMDIR}/init.clio.vim" "${VIMDIR}/init.local.vim"
 
 # Tridactyl
