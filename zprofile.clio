@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+emulate sh -c "source $HOME/.clio_profile"

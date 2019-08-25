@@ -7,6 +7,11 @@ ln -sf "${SCRIPTDIR}/bash_profile.clio" "${HOME}/.bash_profile"
 ln -sf "${SCRIPTDIR}/bashrc" "${HOME}/.bashrc"
 ln -sf "${SCRIPTDIR}/bashrc.clio" "${HOME}/.bashrc.local"
 
+# Zsh
+ln -sf "${SCRIPTDIR}/zprofile.clio" "${HOME}/.zprofile"
+ln -sf "${SCRIPTDIR}/zshrc" "${HOME}/.zshrc"
+ln -sf "${SCRIPTDIR}/zshrc.clio" "${HOME}/.zshrc.local"
+
 # Tmux
 ln -sf "${SCRIPTDIR}/tmux.conf" "${HOME}/.tmux.conf"
 

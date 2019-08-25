@@ -5,6 +5,9 @@ SCRIPTDIR=$PWD
 # Bash
 ln -sf "${SCRIPTDIR}/bashrc" "${HOME}/.bashrc"
 
+# Zsh
+ln -sf "${SCRIPTDIR}/zshrc" "${HOME}/.zshrc"
+
 # Tmux
 ln -sf "${SCRIPTDIR}/tmux.conf" "${HOME}/.tmux.conf"
 
