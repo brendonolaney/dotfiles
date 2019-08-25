@@ -2,8 +2,6 @@
 
 SCRIPTDIR=$PWD
 
-mkdir -p "${HOME}/.config/nvim"
-
 # Bash
 ln -sf "${SCRIPTDIR}/bashrc" "${HOME}/.bashrc"
 ln -sf "${SCRIPTDIR}/bash_profile" "${HOME}/.bash_profile"
@@ -12,7 +10,9 @@ ln -sf "${SCRIPTDIR}/bash_profile" "${HOME}/.bash_profile"
 ln -sf "${SCRIPTDIR}/tmux.conf" "${HOME}/.tmux.conf"
 
 # Vim
-ln -sf "${SCRIPTDIR}/vimrc" "${HOME}/.config/nvim/init.vim"
+VIMDIR="${HOME}/.config/nvim"
+mkdir -p "${VIMDIR}"
+ln -sf "${SCRIPTDIR}/nvim" "${VIMDIR}/"
 
 # Tridactyl
 ln -sf "${SCRIPTDIR}/tridactylrc" "${HOME}/.tridactylrc"
