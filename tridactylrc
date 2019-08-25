@@ -166,8 +166,8 @@ bind w hint -W mpvsafe  " video link
 
 bind z undo
 bind Z undo window
-bind x clipboard yank; tabclose
-bind X clipboard yank; composite tabprev; tabclose #
+bind x tabclose
+bind X composite tabprev; tabclose #
 bind cc clipboard yank
 bind cs clipboard yankshort
 bind cc clipboard yankcanon
