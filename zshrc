@@ -34,11 +34,11 @@ set -o emacs
 # prompt that isn't unreasonably slow is hard, and it comes with one
 if [[ -d "${HOME}/.oh-my-zsh" ]]
 then
+  ZSH_THEME="simple"
+  plugins=(gitfast)
   export ZSH="/Users/brendonolaney/.oh-my-zsh"
-  ZSH_THEME="maran"
   COMPLETION_WAITING_DOTS="true"
   DISABLE_UNTRACKED_FILES_DIRTY="true"
-  plugins=(git rails)
   source $ZSH/oh-my-zsh.sh
 else
   echo "oh-my-zsh is not installed"
