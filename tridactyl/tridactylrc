@@ -1,0 +1,16 @@
+sanitise tridactyllocal tridactylsync
+
+set searchengine duckduckgo
+guiset_quiet gui full
+guiset_quiet statuspanel left
+
+" QWERTY hintchars
+set hintchars hjklasdfgyuiopqwertnmzxcvb
+" DVORAK hintchars
+" set hintchars dhtnsaoeuifgcrlpyfbmwvzqjkx
+
+set editorcmd /Applications/VimR.app/Contents/MacOS/VimR -n --wait %f
+
+" source ~/.config/tridactyl/ergofox
+
+" vim: set filetype=vim:

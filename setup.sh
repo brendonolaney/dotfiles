@@ -16,7 +16,7 @@ mkdir -p "${HOME}/.config"
 ln -sf "${SCRIPTDIR}/nvim" "${HOME}/.config/nvim"
 
 # Tridactyl
-ln -sf "${SCRIPTDIR}/tridactylrc" "${HOME}/.tridactylrc"
+ln -sf "${SCRIPTDIR}/tridactyl" "${HOME}/.config/tridactyl"
 
 # Emacs
 ln -sf "${SCRIPTDIR}/emacs.d" "${HOME}/.emacs.d"
