@@ -19,9 +19,9 @@ if filereadable(glob("~/.config/nvim/maps.vim"))
 endif
 
 " Ergovim QWERTY
-if filereadable(glob("~/.config/nvim/ergovimqwerty.vim"))
-  so ~/.config/nvim/ergovimqwerty.vim
-endif
+" if filereadable(glob("~/.config/nvim/ergovimqwerty.vim"))
+"   so ~/.config/nvim/ergovimqwerty.vim
+" endif
 
 " Preferences
 if filereadable(glob("~/.config/nvim/prefs.vim"))
