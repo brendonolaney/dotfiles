@@ -30,14 +30,18 @@ alias cds='cd ~/Source/dotfiles'
 # I prefer emacs to vim for single line editing.
 set -o emacs
 
-# Set and use a git status prompt if available.
-if [[ -r "/usr/local/opt/zsh-git-prompt/zshrc.sh" ]]
+# Generally I don't like gigantic frameworks like oh-my-zsh, but getting a git
+# prompt that isn't unreasonably slow is hard, and it comes with one
+if [[ -d "${HOME}/.oh-my-zsh" ]]
 then
-  source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
-  PROMPT='%B%m %~%b $(git_super_status) %# '
+  export ZSH="/Users/brendonolaney/.oh-my-zsh"
+  ZSH_THEME="maran"
+  COMPLETION_WAITING_DOTS="true"
+  DISABLE_UNTRACKED_FILES_DIRTY="true"
+  plugins=(git rails)
+  source $ZSH/oh-my-zsh.sh
 else
-  echo "zsh-git-prompt is not installed."
-  echo "try \`brew install zsh-git-prompt\`"
+  echo "oh-my-zsh is not installed"
 fi
 
 # Set and use FZF file and history finding if available.
@@ -49,16 +53,8 @@ else
   echo "try \`brew install zsh && /usr/local/opt/fzf/install\`"
 fi
 
-# Source additional command completions if available.
-if [[ -r "/usr/local/share/zsh-completions" ]]
-then
-  fpath=(/usr/local/share/zsh-completions $fpath)
-else
-  echo "zsh-completions is not installed."
-  echo "try \`brew install zsh-completions\`"
-fi
-
-# Activate command correction if available.
+# Activate command correction command if available.
+# Might be able to use oh-my-zsh's command correction thing too.
 if command -v thefuck>/dev/null
 then
   eval "$(thefuck --alias)"
@@ -78,3 +74,4 @@ if [[ -r "${HOME}/.zshrc.local" ]]
 then
   source "${HOME}/.zshrc.local"
 fi
+
