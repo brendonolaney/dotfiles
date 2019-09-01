@@ -36,7 +36,7 @@ if [[ -d "${HOME}/.oh-my-zsh" ]]
 then
   ZSH_THEME="simple"
   plugins=(gitfast)
-  export ZSH="/Users/brendonolaney/.oh-my-zsh"
+  export ZSH="${HOME}/.oh-my-zsh"
   COMPLETION_WAITING_DOTS="true"
   DISABLE_UNTRACKED_FILES_DIRTY="true"
   source $ZSH/oh-my-zsh.sh
