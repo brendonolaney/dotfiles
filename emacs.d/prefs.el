@@ -20,6 +20,10 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
 ;; Org-mode
 
 (setq org-todo-keywords
