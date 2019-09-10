@@ -6,3 +6,4 @@ elpa/
 .org-id-locations
 .DS_Store
 **/*.local.*
+**/\.netrwhist
