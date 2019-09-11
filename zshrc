@@ -38,6 +38,7 @@ then
   plugins=(gitfast)
   export ZSH="${HOME}/.oh-my-zsh"
   COMPLETION_WAITING_DOTS="true"
+  DISABLE_MAGIC_FUNCTIONS="true"
   DISABLE_UNTRACKED_FILES_DIRTY="true"
   source $ZSH/oh-my-zsh.sh
 else
