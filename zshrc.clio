@@ -3,7 +3,10 @@
 THEMISROOT="${HOME}/clio/themis"
 alias cdr='cd ${THEMISROOT}'
 
+source "${HOME}/.clio_profile"
+
 export GOPATH=${THEMISROOT}/microservices/webhooks
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$(go env GOPATH)/bin
+
 
