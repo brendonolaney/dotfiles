@@ -31,9 +31,9 @@
     (sequence "ASSIGNED(a)" "IMPLEMENTING(i)" "REVIEW(r)" "QA(q)" "DEPLOY(y)" "|" "DONE(d)")
     (sequence "WAITING(w@)" "|" "CANCELLED(n@/!)")))
 
-(setq org-agenda-files (list "~/Org/work.org"
-                             "~/Org/home.org"))
-(setq org-default-notes-file "~/Org/inbox.org")
+(setq org-agenda-files (list "~/Nextcloud/org/work.org"
+                             "~/Nextcloud/org/home.org"))
+(setq org-default-notes-file "~/Nextcloud/org/inbox.org")
 
 (global-set-key (kbd "C-c c") 'org-capture)
 
