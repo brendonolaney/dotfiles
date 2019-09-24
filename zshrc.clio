@@ -2,6 +2,7 @@
 
 THEMISROOT="${HOME}/clio/themis"
 alias cdr='cd ${THEMISROOT}'
+alias pull='git pull --rebase --autostash && bundle'
 
 source "${HOME}/.clio_profile"
 
