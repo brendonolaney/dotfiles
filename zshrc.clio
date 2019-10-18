@@ -2,12 +2,11 @@
 
 THEMISROOT="${HOME}/clio/themis"
 alias cdr='cd ${THEMISROOT}'
-alias pull='git pull --rebase --autostash && bundle'
+alias pull='git pull --rebase --autostash && bundle && bin/rails db:migrate && bin/rails db:migrate RAILS_ENV=test'
 
 source "${HOME}/.clio_profile"
 
 export GOPATH=${THEMISROOT}/microservices/webhooks
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$(go env GOPATH)/bin
-
 
