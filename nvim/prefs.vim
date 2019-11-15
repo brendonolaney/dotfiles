@@ -20,4 +20,5 @@ set showtabline=2
 set mouse=a
 set foldmethod=syntax
 set foldlevelstart=99
+set clipboard=unnamed
 
