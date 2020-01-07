@@ -10,7 +10,7 @@ set notimeout
 set ttimeout
 
 " Preferences
-set background=light
+set background=dark
 set colorcolumn=80,120
 set shiftwidth=2
 set softtabstop=2

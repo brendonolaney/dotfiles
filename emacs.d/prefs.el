@@ -1,6 +1,7 @@
 (setq inhibit-splash-screen t)
 (tool-bar-mode -1)
 (global-display-line-numbers-mode)
+(when (member "Menlo" (font-family-list)) (set-frame-font "Menlo-20" t t))
 
 ;; Packages
 
