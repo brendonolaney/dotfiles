@@ -18,6 +18,7 @@ Plug 'mileszs/ack.vim'  " Project level search
 Plug 'tpope/vim-fugitive'  " Git integration
 Plug 'tpope/vim-rhubarb'  " GitHub integration
 Plug 'w0rp/ale'  " Linting
+Plug 'tpope/vim-dadbod'  " DB integration
 
 " Language support
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }

@@ -1,7 +1,8 @@
 (setq inhibit-splash-screen t)
 (tool-bar-mode -1)
 (global-display-line-numbers-mode)
-(when (member "Menlo" (font-family-list)) (set-frame-font "Menlo-20" t t))
+(when (member "Source Code Pro" (font-family-list))
+  (set-frame-font "Source Code Pro-14:demibold" t t))
 
 ;; Packages
 
@@ -28,9 +29,7 @@
 ;; Org-mode
 
 (setq org-todo-keywords
-  '((sequence "TODO(t)" "|" "DONE(d)")
-    (sequence "ASSIGNED(a)" "IMPLEMENTING(i)" "REVIEW(r)" "QA(q)" "DEPLOY(y)" "|" "DONE(d)")
-    (sequence "WAITING(w@)" "|" "CANCELLED(n@/!)")))
+  '((sequence "TODO(t)" "|" "DONE(d)")))
 
 (setq org-agenda-files (list "~/Org/work.org"
                              "~/Org/home.org"))
