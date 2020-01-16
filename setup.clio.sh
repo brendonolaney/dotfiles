@@ -8,7 +8,8 @@ ln -sf "${SCRIPTDIR}/bashrc" "${HOME}/.bashrc"
 ln -sf "${SCRIPTDIR}/bashrc.clio" "${HOME}/.bashrc.local"
 
 # Zsh
-ln -sf "${SCRIPTDIR}/zprofile.clio" "${HOME}/.zprofile"
+ln -sf "${SCRIPTDIR}/zprofile" "${HOME}/.zprofile"
+ln -sf "${SCRIPTDIR}/zprofile.clio" "${HOME}/.zprofile.local"
 ln -sf "${SCRIPTDIR}/zshrc" "${HOME}/.zshrc"
 ln -sf "${SCRIPTDIR}/zshrc.clio" "${HOME}/.zshrc.local"
 

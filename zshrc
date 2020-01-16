@@ -27,8 +27,8 @@ alias rm='rm -i'  # Prompt for safety.
 # Common directory shortcuts.
 alias cds='cd ~/Source/dotfiles'
 
-# I prefer emacs to vim for single line editing.
-set -o emacs
+# Try VI again
+set -o vi
 
 # Generally I don't like gigantic frameworks like oh-my-zsh, but getting a git
 # prompt that isn't unreasonably slow is hard, and it comes with one
@@ -36,7 +36,6 @@ if [[ -d "${HOME}/.oh-my-zsh" ]]
 then
   ZSH_THEME="simple"
   plugins=(gitfast)
-  export ZSH="${HOME}/.oh-my-zsh"
   COMPLETION_WAITING_DOTS="true"
   DISABLE_MAGIC_FUNCTIONS="true"
   DISABLE_UNTRACKED_FILES_DIRTY="true"
