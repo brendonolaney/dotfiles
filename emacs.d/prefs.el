@@ -6,6 +6,14 @@
 
 ;; Packages
 
+
+(use-package exec-path-from-shell
+  :ensure t
+  :init
+  (when (memq window-system '(mac ns x))
+    (setq exec-path-from-shell-arguments (list "-l"))
+    (exec-path-from-shell-initialize)))
+
 (use-package evil
   :ensure t
   :config
