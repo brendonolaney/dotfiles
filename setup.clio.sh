@@ -2,16 +2,12 @@
 
 SCRIPTDIR=$PWD
 
-# Bash
-ln -sf "${SCRIPTDIR}/bash_profile.clio" "${HOME}/.bash_profile"
-ln -sf "${SCRIPTDIR}/bashrc" "${HOME}/.bashrc"
-ln -sf "${SCRIPTDIR}/bashrc.clio" "${HOME}/.bashrc.local"
-
-# Zsh
-ln -sf "${SCRIPTDIR}/zprofile" "${HOME}/.zprofile"
-ln -sf "${SCRIPTDIR}/zprofile.clio" "${HOME}/.zprofile.local"
-ln -sf "${SCRIPTDIR}/zshrc" "${HOME}/.zshrc"
-ln -sf "${SCRIPTDIR}/zshrc.clio" "${HOME}/.zshrc.local"
+# ZSH
+ZSHDIR=zsh
+ln -sf "${SCRIPTDIR}/${ZSHDIR}/zprofile" "${HOME}/.zprofile"
+ln -sf "${SCRIPTDIR}/${ZSHDIR}/zprofile.clio" "${HOME}/.zprofile.local"
+ln -sf "${SCRIPTDIR}/${ZSHDIR}/zshrc" "${HOME}/.zshrc"
+ln -sf "${SCRIPTDIR}/${ZSHDIR}/zshrc.clio" "${HOME}/.zshrc.local"
 
 # Tmux
 ln -sf "${SCRIPTDIR}/tmux.conf" "${HOME}/.tmux.conf"
@@ -21,9 +17,6 @@ VIMDIR="${HOME}/.config/nvim"
 mkdir -p "${HOME}/.config"
 ln -sf "${SCRIPTDIR}/nvim" "${HOME}/.config/nvim"
 ln -sf "${VIMDIR}/init.clio.vim" "${VIMDIR}/init.local.vim"
-
-# Tridactyl
-ln -sf "${SCRIPTDIR}/tridactyl" "${HOME}/.config/tridactyl"
 
 # Emacs
 ln -sf "${SCRIPTDIR}/emacs.d" "${HOME}/.emacs.d"
