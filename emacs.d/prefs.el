@@ -1,3 +1,9 @@
+;;; prefs.el --- Prefences File
+;;; Commentary:
+;;; Personal preferences and configuration. Probably factor out packages later.
+
+;;; Code:
+
 (setq inhibit-splash-screen t)
 (tool-bar-mode -1)
 (global-display-line-numbers-mode)
@@ -5,7 +11,6 @@
   (set-frame-font "Source Code Pro-14:demibold" t t))
 
 ;; Packages
-
 
 (use-package exec-path-from-shell
   :ensure t
@@ -25,8 +30,8 @@
   :config
   (add-hook 'org-mode-hook 'evil-org-mode)
   (add-hook 'evil-org-mode-hook
-            (lambda ()
-              (evil-org-set-key-theme)))
+    (lambda ()
+      (evil-org-set-key-theme)))
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
@@ -45,3 +50,4 @@
 
 (global-set-key (kbd "C-c c") 'org-capture)
 
+;;; prefs.el ends here
