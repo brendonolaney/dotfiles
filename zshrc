@@ -23,6 +23,17 @@ alias cds='cd ~/Source/dotfiles'
 # Try VI again
 set -o vi
 
+# Use pure prompt because it's good and not bad
+if [[ -r "${HOME}/.zsh/pure" ]]
+then
+  fpath+=("${HOME}/.zsh/pure")
+  autoload -U promptinit; promptinit
+  prompt pure
+else
+  echo "Pure prompt is not installed for zsh."
+  echo "try \`git clone https://github.com/sindresorhus/pure.git \"\$HOME/.zsh/pure\"\`"
+fi
+
 # Set and use FZF file and history finding if available.
 if [[ -r "${HOME}/.fzf.zsh" ]]
 then

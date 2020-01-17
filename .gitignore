@@ -8,3 +8,4 @@ elpa/
 .DS_Store
 **/*.local*
 **/\.netrwhist
+zsh/pure
