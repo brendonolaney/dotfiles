@@ -70,8 +70,8 @@ then
 fi
 
 # Source computer specific script.
-if [[ -r "${HOME}/.zshrc.local" ]]
+if [[ -r "${HOME}/.zsh/zshrc.local" ]]
 then
-  source "${HOME}/.zshrc.local"
+  source "${HOME}/.zsh/zshrc.local"
 fi
 

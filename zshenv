@@ -5,12 +5,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export ZSH="${HOME}/.oh-my-zsh"
 
-if [[ -r "${HOME}/.zprofile.local" ]]
+if [[ -r "${HOME}/.zsh/zprofile.local" ]]
 then
-  source "${HOME}/.zprofile.local"
-fi
-
-if [[ -r "${HOME}/.clio_profile" ]]
-then
-  emulate sh -c "source $HOME/.clio_profile"
+  source "${HOME}/.zsh/zprofile.local"
 fi

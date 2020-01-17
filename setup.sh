@@ -1,18 +1,24 @@
 #! /bin/bash
 
 SCRIPTDIR=$PWD
+mkdir -p "${HOME}/.config"
 
 # ZSH
-ZSHDIR=zsh
-ln -sf "${SCRIPTDIR}/${ZSHDIR}/zprofile" "${HOME}/.zprofile"
-ln -sf "${SCRIPTDIR}/${ZSHDIR}/zshrc" "${HOME}/.zshrc"
+ZSHDIR="${HOME}/.zsh"
+ln -sf "${SCRIPTDIR}/zshenv" "${HOME}/.zshenv"
+ln -sf "${SCRIPTDIR}/zshrc" "${HOME}/.zshrc"
+rm -rf "${ZSHDIR}"
+ln -sf "${SCRIPTDIR}/zsh" "${ZSHDIR}"
+
+# Vim
+VIMDIR="${HOME}/.config/nvim"
+rm -rf "${VIMDIR}"
+ln -sf "${SCRIPTDIR}/nvim" "${VIMDIR}"
+
+# Emacs
+EMACSDIR="${HOME}/.emacs.d"
+rm -rf "${EMACSDIR}"
+ln -sf "${SCRIPTDIR}/emacs.d" "${EMACSDIR}"
 
 # Tmux
 ln -sf "${SCRIPTDIR}/tmux.conf" "${HOME}/.tmux.conf"
-
-# Vim
-mkdir -p "${HOME}/.config"
-ln -sf "${SCRIPTDIR}/nvim" "${HOME}/.config/nvim"
-
-# Emacs
-ln -sf "${SCRIPTDIR}/emacs.d" "${HOME}/.emacs.d"
