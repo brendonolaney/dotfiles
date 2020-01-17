@@ -4,6 +4,7 @@ elpa/
 \.\#*
 *~
 .org-id-locations
+*.eld
 .DS_Store
 **/*.local.*
 **/\.netrwhist
