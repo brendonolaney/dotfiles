@@ -1,6 +1,0 @@
-#!/bin/zsh
-
-if [[ -r "${HOME}/.clio_profile" ]]
-then
-  emulate sh -c "source $HOME/.clio_profile"
-fi

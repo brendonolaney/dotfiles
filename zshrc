@@ -6,13 +6,6 @@ HISTSIZE=50000
 SAVEHIST=50000
 setopt appendhistory
 
-# Add my user bins and homebrew to the path.
-export PATH="${HOME}/Source/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
-
-# Ensure all commands use nvim as the editor.
-export EDITOR=nvim
-export VISUAL=nvim
-
 # Useful aliases.
 alias v='nvim'
 alias vi='nvim'
