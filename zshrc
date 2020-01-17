@@ -43,21 +43,6 @@ else
   echo "try \`brew install zsh && /usr/local/opt/fzf/install\`"
 fi
 
-# Activate command correction command if available.
-if command -v thefuck>/dev/null
-then
-  eval "$(thefuck --alias)"
-else
-  echo "thefuck is not installed."
-  echo "try \`brew install thefuck\`"
-fi
-
-# Hail Sobek.
-if command -v ddate>/dev/null
-then
-  ddate
-fi
-
 # Source computer specific script.
 if [[ -r "${HOME}/.zsh/zshrc.local" ]]
 then
