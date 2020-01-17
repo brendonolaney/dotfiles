@@ -23,20 +23,6 @@ alias cds='cd ~/Source/dotfiles'
 # Try VI again
 set -o vi
 
-# Generally I don't like gigantic frameworks like oh-my-zsh, but getting a git
-# prompt that isn't unreasonably slow is hard, and it comes with one
-if [[ -d "${HOME}/.oh-my-zsh" ]]
-then
-  ZSH_THEME="simple"
-  plugins=(gitfast)
-  COMPLETION_WAITING_DOTS="true"
-  DISABLE_MAGIC_FUNCTIONS="true"
-  DISABLE_UNTRACKED_FILES_DIRTY="true"
-  source $ZSH/oh-my-zsh.sh
-else
-  echo "oh-my-zsh is not installed"
-fi
-
 # Set and use FZF file and history finding if available.
 if [[ -r "${HOME}/.fzf.zsh" ]]
 then
@@ -47,7 +33,6 @@ else
 fi
 
 # Activate command correction command if available.
-# Might be able to use oh-my-zsh's command correction thing too.
 if command -v thefuck>/dev/null
 then
   eval "$(thefuck --alias)"
@@ -67,4 +52,3 @@ if [[ -r "${HOME}/.zsh/zshrc.local" ]]
 then
   source "${HOME}/.zsh/zshrc.local"
 fi
-
