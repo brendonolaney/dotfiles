@@ -9,7 +9,7 @@ ln -sf "${SCRIPTDIR}/zshenv" "${HOME}/.zshenv"
 ln -sf "${SCRIPTDIR}/zshrc" "${HOME}/.zshrc"
 rm -rf "${ZSHDIR}"
 ln -sf "${SCRIPTDIR}/zsh" "${ZSHDIR}"
-ln -sf "${ZSHDIR}/zprofile.clio" "${ZSHDIR}/zprofile.local"
+ln -sf "${ZSHDIR}/zshenv.clio" "${ZSHDIR}/zshenv.local"
 ln -sf "${ZSHDIR}/zshrc.clio" "${ZSHDIR}/zshrc.local"
 
 # Vim
