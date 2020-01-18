@@ -2,4 +2,3 @@
 
 THEMISROOT="${HOME}/clio/themis"
 alias cdr='cd ${THEMISROOT}'
-alias pull='git pull --rebase --autostash && bundle && yarn install && bin/rails db:migrate && bin/rails db:migrate RAILS_ENV=test'
