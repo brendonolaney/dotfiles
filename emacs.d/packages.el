@@ -76,4 +76,10 @@
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1))
 
+;; Show you keybinds for emacs chording
+(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode))
+
 ;;; packages.el ends here
