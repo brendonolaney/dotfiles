@@ -46,11 +46,43 @@
     (setq exec-path-from-shell-arguments (list "-l"))
     (exec-path-from-shell-initialize)))
 
+;; Project management (mostly for grepping and file location)
+(use-package projectile
+  :ensure t
+  :config
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
+
+(use-package magit
+  :ensure t)
+
+;; Syntax checking
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
+;; Show you keybinds for emacs chording
+(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode))
+
 ;; Vim emulation
 (use-package evil
   :ensure t
+  :init
+  ;; use evil-collection to handle this.
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
   :config
   (evil-mode t))
+
+;; Vim emulation for modes not covered in the main package
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
 
 ;; Vim emulation for org-mode
 (use-package evil-org
@@ -64,22 +96,9 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
-;; Syntax checking
-(use-package flycheck
+;; Vim emulation for magit
+(use-package evil-magit
   :ensure t
-  :init (global-flycheck-mode))
-
-;; Project management (mostly for grepping and file location)
-(use-package projectile
-  :ensure t
-  :config
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-  (projectile-mode +1))
-
-;; Show you keybinds for emacs chording
-(use-package which-key
-  :ensure t
-  :init
-  (which-key-mode))
+  :after magit evil)
 
 ;;; packages.el ends here
