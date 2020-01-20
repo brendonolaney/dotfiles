@@ -2,3 +2,8 @@
 
 THEMISROOT="${HOME}/clio/themis"
 alias cdr='cd ${THEMISROOT}'
+
+if [[ $(which ruby) == '/usr/bin/ruby' ]]
+then
+  emulate sh -c "source ${HOME}/.clio_profile"
+fi
