@@ -30,14 +30,8 @@
 ;; The actual packages
 ;;
 ;; Stuff to look at soon:
-;; evil-collection
-;; find out what that thing that shows you all your potential completions is
-;; shell config
-;;
-;; Stuff that I can be minimally productive without:
-;; magit
 ;; rspec runner for clio or better yet a test runner framework
-;;
+
 ;; This sets emacs environment from .zshenv on MacOS
 (use-package exec-path-from-shell
   :ensure t
@@ -66,6 +60,20 @@
   :ensure t
   :init
   (which-key-mode))
+
+;; These three let me search for stuff in my project more better
+(use-package ivy
+  :ensure t
+  :config
+  (ivy-mode 1))
+
+(use-package counsel
+  :ensure t
+  :after ivy)
+
+(use-package counsel-projectile
+  :ensure t
+  :after counsel)
 
 ;; Vim emulation
 (use-package evil
