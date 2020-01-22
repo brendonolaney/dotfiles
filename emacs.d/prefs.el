@@ -17,6 +17,8 @@
  '(custom-enabled-themes (quote (tsdh-light))))
 (when (member "Source Code Pro" (font-family-list))
   (set-frame-font "Source Code Pro-14:demibold" t t))
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . light))
 
 ;; Org-mode:
 
