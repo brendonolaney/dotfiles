@@ -20,8 +20,8 @@ alias rm='rm -i'  # Prompt for safety.
 # Common directory shortcuts.
 alias cds='cd ~/Source/dotfiles'
 
-# Try VI again
-set -o vi
+# Emacs keys still better for interactive terminals imo
+set -o emacs
 
 # Use pure prompt because it's good and not bad
 if [[ -r "${HOME}/.zsh/pure" ]]
