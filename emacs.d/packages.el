@@ -75,6 +75,10 @@
   :ensure t
   :after counsel)
 
+(use-package swiper
+  :ensure t
+  :after counsel)
+
 ;; Vim emulation
 (use-package evil
   :ensure t
