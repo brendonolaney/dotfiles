@@ -27,11 +27,6 @@
 
 (require 'use-package)
 
-;; The actual packages
-;;
-;; Stuff to look at soon:
-;; rspec runner for clio or better yet a test runner framework
-
 ;; This sets emacs environment from .zshenv on MacOS
 (use-package exec-path-from-shell
   :ensure t

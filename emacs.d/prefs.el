@@ -12,9 +12,10 @@
 
 (setq inhibit-splash-screen t)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
 (global-display-line-numbers-mode)
 (custom-set-variables
- '(custom-enabled-themes (quote (tsdh-light))))
+ '(custom-enabled-themes (quote (lueven))))
 (when (member "Source Code Pro" (font-family-list))
   (set-frame-font "Source Code Pro-14:demibold" t t))
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
