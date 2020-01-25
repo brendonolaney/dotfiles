@@ -108,4 +108,17 @@
   :ensure t
   :after magit evil)
 
+;; Custom keybinding
+(use-package general
+  :ensure t
+  :config (general-define-key
+  :states '(normal visual insert emacs)
+  :prefix "SPC"
+  :non-normal-prefix "M-SPC"
+  "f" '(counsel-projectile :which-key "find files")
+  "s" '(counsel-ag :which-key "search files")
+  "g" '(magit-status :which-key "git")
+  "t" '(ansi-term :which-key "terminal")
+))
+
 ;;; packages.el ends here
