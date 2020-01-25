@@ -22,3 +22,6 @@ ln -sf "${SCRIPTDIR}/emacs.d" "${EMACSDIR}"
 
 # Tmux
 ln -sf "${SCRIPTDIR}/tmux.conf" "${HOME}/.tmux.conf"
+
+# Tridactyl
+ln -sf "${SCRIPTDIR}/tridactyl" "${HOME}/.config/tridactyl"
