@@ -115,7 +115,8 @@
   :states '(normal visual insert emacs)
   :prefix "SPC"
   :non-normal-prefix "M-SPC"
-  "f" '(counsel-projectile :which-key "find files")
+  "o" '(counsel-find-file :which-key "open file")
+  "f" '(counsel-projectile :which-key "find file in project")
   "s" '(counsel-ag :which-key "search files")
   "g" '(magit-status :which-key "git")
   "t" '(ansi-term :which-key "terminal")
