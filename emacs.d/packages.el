@@ -118,8 +118,12 @@
   "o" '(counsel-find-file :which-key "open file")
   "f" '(counsel-projectile :which-key "find file in project")
   "s" '(counsel-ag :which-key "search files")
-  "g" '(magit-status :which-key "git")
-  "t" '(ansi-term :which-key "terminal")
+  "n" '(ansi-term :which-key "terminal")
+  "tm" '(verify-method :which-key "test method")
+  "tf" '(verify-matching :which-key "test file")
+  "tl" '(rerun :which-key "test last")
+  "gs" '(magit-status :which-key "git status")
+  "gb" '(magit-branch :which-key "git branch")
 ))
 
 ;;; packages.el ends here

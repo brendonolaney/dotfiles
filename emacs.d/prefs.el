@@ -21,6 +21,8 @@
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . light))
 
+(setq make-backup-files nil)
+
 ;; Org-mode:
 
 (setq org-todo-keywords
