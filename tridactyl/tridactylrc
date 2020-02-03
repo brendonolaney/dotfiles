@@ -9,5 +9,7 @@ guiset_quiet statuspanel left
 " DVORAK hintchars
 set hintchars dhtnsaoeuifgcrlpyfbmwvzqjkx
 
-set editorcmd emacs -nw
+set editorcmd /Applications/Emacs.app/Contents/MacOS/Emacs
+set hintnames numeric
+set hintfiltermode vimperator
 
