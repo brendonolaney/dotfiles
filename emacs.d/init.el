@@ -7,8 +7,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (lueven)))
- '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(package-selected-packages
    (quote
     (rspec-mode general counsel-projectile counsel ivy which-key magit evil-magit evil-collection projectile use-package flycheck exec-path-from-shell evil-visual-mark-mode evil-org))))
@@ -28,7 +26,7 @@
  (load-file "~/.emacs.d/prefs.el"))
 (if (file-exists-p "~/.emacs.d/packages.el")
  (load-file "~/.emacs.d/packages.el"))
-(if (file-exists-p "~/.emacs.d/prefs.local.el")
- (load-file "~/.emacs.d/prefs.local.el"))
+(if (file-exists-p "~/.emacs.d/init.local.el")
+ (load-file "~/.emacs.d/init.local.el"))
 
 ;;; init.el ends here
