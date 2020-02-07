@@ -13,9 +13,9 @@
 (setq inhibit-splash-screen t)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(load-theme 'leuven)
 (global-display-line-numbers-mode)
-(custom-set-variables
- '(custom-enabled-themes (quote (lueven))))
+(setq-default indent-tabs-mode nil)
 (when (member "Source Code Pro" (font-family-list))
   (set-frame-font "Source Code Pro-14:demibold" t t))
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
@@ -25,10 +25,10 @@
 
 ;; Org-mode:
 
+(setq org-export-backends (quote (ascii html icalendar latex md odt)))
 (setq org-todo-keywords
   '((sequence "TODO(t)" "|" "DONE(d)")))
-(setq org-agenda-files (list "~/Org/work.org"
-                             "~/Org/home.org"))
+(setq org-agenda-files (list "~/Org/home.org"))
 (setq org-default-notes-file "~/Org/inbox.org")
 (global-set-key (kbd "C-c c") 'org-capture)
 
