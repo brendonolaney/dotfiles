@@ -108,4 +108,28 @@
   :ensure t
   :after magit evil)
 
+(use-package general
+  :ensure t
+  :config
+  (general-create-definer base-leader-def
+    :prefix "SPC")
+  (general-create-definer file-leader-def
+    :prefix "SPC f")
+  (base-leader-def
+    :states '(normal)
+    "x" '(counsel-M-x :which-key "extended commands")
+    "g" '(magit-file-dispatch :which-key "git")
+    "c" '(:ignore t :which-key "C-c prefix")
+    "f" '(:ignore t :which-key "file finding")
+  )
+  (file-leader-def
+    :states '(normal)
+    "f" '(counsel-find-file :which-key "find file in current tree")
+    "p" '(counsel-projectile :which-key "find file in project")
+    "s" '(counsel-ag :which-key "search within files")
+  )
+  (general-define-key
+    :states '(normal)
+    "SPC c" (general-simulate-key "C-c"))
+)
 ;;; packages.el ends here
