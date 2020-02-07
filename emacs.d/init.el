@@ -8,6 +8,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (lueven)))
+ '(org-agenda-files (quote ("~/Org/home.org")))
  '(package-selected-packages
    (quote
     (general counsel-projectile counsel ivy which-key magit evil-magit evil-collection projectile use-package flycheck exec-path-from-shell evil-visual-mark-mode evil-org))))
