@@ -9,8 +9,8 @@
 ;;; Code:
 
 (setq org-todo-keywords
-  '((sequence "TODO(t)" "ASSIGNED(a)" "IMPLEMENTING(i)" "REVIEW(r)" "QA(q)" "DEPLOY(y)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(n)")))
-(setq org-agenda-files (list "~/Org/work.org"))
+  '((sequence "TODO(t)" "|" "DONE(d)")))
+(setq org-agenda-files (list "~/Org/home.org"))
 (setq org-default-notes-file "~/Org/inbox.org")
 
 ;; Custom keybinding
@@ -24,10 +24,8 @@
   "f" '(counsel-projectile :which-key "find file in project")
   "s" '(counsel-ag :which-key "search files")
   "n" '(ansi-term :which-key "terminal")
-  "tm" '(rspec-verify-method :which-key "test method")
-  "tf" '(rspec-verify-matching :which-key "test file")
-  "tl" '(rspec-rerun :which-key "test last")
   "gs" '(magit-status :which-key "git status")
   "gb" '(magit-branch :which-key "git branch")
 ))
-;;; init.clio.el ends here
+
+;;; init.goodsprings.el ends here

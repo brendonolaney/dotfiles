@@ -26,9 +26,6 @@
 ;; Org-mode:
 
 (setq org-export-backends (quote (ascii html icalendar latex md odt)))
-(setq org-todo-keywords
-  '((sequence "TODO(t)" "|" "DONE(d)")))
-(setq org-agenda-files (list "~/Org/home.org"))
 (setq org-default-notes-file "~/Org/inbox.org")
 (global-set-key (kbd "C-c c") 'org-capture)
 

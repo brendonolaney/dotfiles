@@ -108,22 +108,4 @@
   :ensure t
   :after magit evil)
 
-;; Custom keybinding
-(use-package general
-  :ensure t
-  :config (general-define-key
-  :states '(normal visual insert emacs)
-  :prefix "SPC"
-  :non-normal-prefix "M-SPC"
-  "o" '(counsel-find-file :which-key "open file")
-  "f" '(counsel-projectile :which-key "find file in project")
-  "s" '(counsel-ag :which-key "search files")
-  "n" '(ansi-term :which-key "terminal")
-  "tm" '(rspec-verify-method :which-key "test method")
-  "tf" '(rspec-verify-matching :which-key "test file")
-  "tl" '(rspec-rerun :which-key "test last")
-  "gs" '(magit-status :which-key "git status")
-  "gb" '(magit-branch :which-key "git branch")
-))
-
 ;;; packages.el ends here
