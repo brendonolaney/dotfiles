@@ -81,6 +81,7 @@
   ;; use evil-collection to handle this.
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
   :config
   (evil-mode t))
 
@@ -108,6 +109,7 @@
   :ensure t
   :after magit evil)
 
+;; Spacemacs-like keybindings.
 (use-package general
   :ensure t
   :config
@@ -120,6 +122,7 @@
     "x" '(counsel-M-x :which-key "extended commands")
     "g" '(magit-file-dispatch :which-key "git")
     "c" '(:ignore t :which-key "C-c prefix")
+    "u" '(:ignore t :which-key "C-u prefix")
     "f" '(:ignore t :which-key "file finding")
   )
   (file-leader-def
@@ -130,6 +133,8 @@
   )
   (general-define-key
     :states '(normal)
-    "SPC c" (general-simulate-key "C-c"))
+    "SPC c" (general-simulate-key "C-c")
+    "SPC u" (general-simulate-key "C-u")
+  )
 )
 ;;; packages.el ends here
