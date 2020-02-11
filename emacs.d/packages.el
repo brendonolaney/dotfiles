@@ -138,7 +138,8 @@
     "s" '(counsel-ag :which-key "search within files")
   )
   (general-define-key
-    :states '(normal)
+    :states '(normal visual)
+    "/" 'counsel-grep-or-swiper
     "SPC c" (general-simulate-key "C-c")
     "SPC u" (general-simulate-key "C-u")
   )
