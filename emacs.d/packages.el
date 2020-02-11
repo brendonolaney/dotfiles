@@ -92,6 +92,12 @@
   :config
   (evil-collection-init))
 
+;; Surround
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+
 ;; Vim emulation for org-mode
 (use-package evil-org
   :ensure t
