@@ -56,6 +56,12 @@
   :init
   (which-key-mode))
 
+;; Code completion
+(use-package company
+  :ensure t
+  :init
+  (global-company-mode))
+
 ;; These three let me search for stuff in my project more better
 (use-package ivy
   :ensure t
@@ -125,11 +131,11 @@
     :prefix "SPC f")
   (base-leader-def
     :states '(normal visual)
-    "x" '(counsel-M-x :which-key "extended commands")
-    "g" '(magit-file-dispatch :which-key "git")
     "c" '(:ignore t :which-key "C-c prefix")
     "u" '(:ignore t :which-key "C-u prefix")
     "f" '(:ignore t :which-key "file finding")
+    "x" '(counsel-M-x :which-key "extended commands")
+    "g" '(magit-file-dispatch :which-key "git")
   )
   (file-leader-def
     :states '(normal visual)
@@ -142,6 +148,10 @@
     "/" 'counsel-grep-or-swiper
     "SPC c" (general-simulate-key "C-c")
     "SPC u" (general-simulate-key "C-u")
+  )
+  (general-define-key
+    :states '(insert)
+    "C-n" 'company-complete
   )
 )
 ;;; packages.el ends here
