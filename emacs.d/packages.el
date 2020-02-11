@@ -124,7 +124,7 @@
   (general-create-definer file-leader-def
     :prefix "SPC f")
   (base-leader-def
-    :states '(normal)
+    :states '(normal visual)
     "x" '(counsel-M-x :which-key "extended commands")
     "g" '(magit-file-dispatch :which-key "git")
     "c" '(:ignore t :which-key "C-c prefix")
@@ -132,7 +132,7 @@
     "f" '(:ignore t :which-key "file finding")
   )
   (file-leader-def
-    :states '(normal)
+    :states '(normal visual)
     "f" '(counsel-find-file :which-key "find file in current tree")
     "p" '(counsel-projectile :which-key "find file in project")
     "s" '(counsel-ag :which-key "search within files")
