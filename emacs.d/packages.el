@@ -104,6 +104,11 @@
   :config
   (global-evil-surround-mode 1))
 
+(use-package evil-indent-plus
+  :ensure t
+  :init
+  (evil-indent-plus-default-bindings))
+
 ;; Vim emulation for org-mode
 (use-package evil-org
   :ensure t
