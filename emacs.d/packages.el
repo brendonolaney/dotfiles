@@ -163,6 +163,7 @@
     :states '(normal visual)
     "f" '(counsel-find-file :which-key "find file in current tree")
     "p" '(counsel-projectile :which-key "find file in project")
+    "b" '(counsel-buffer-or-recentf :which-key "find open file")
     "s" '(counsel-ag :which-key "search within files")
   )
   (general-define-key
