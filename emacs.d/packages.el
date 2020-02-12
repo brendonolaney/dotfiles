@@ -25,7 +25,9 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(require 'use-package)
+(eval-when-compile
+  (require 'use-package))
+(require 'bind-key)
 
 ;; This sets emacs environment from .zshenv on MacOS
 (use-package exec-path-from-shell
@@ -34,6 +36,21 @@
   (when (memq window-system '(mac ns x))
     (setq exec-path-from-shell-arguments (list "-l"))
     (exec-path-from-shell-initialize)))
+
+(use-package org-beautify-theme
+  :ensure t
+  :config
+  (load-theme 'org-beautify))
+
+(use-package org-beautify-theme
+  :ensure t
+  :config
+  (load-theme 'org-beautify))
+
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;; Project management (mostly for grepping and file location)
 (use-package projectile
