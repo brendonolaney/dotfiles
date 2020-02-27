@@ -19,10 +19,9 @@ ln -sf "${SCRIPTDIR}/nvim" "${VIMDIR}"
 ln -sf "${SCRIPTDIR}/nvim/init.clio.vim" "${SCRIPTDIR}/nvim/init.local.vim"
 
 # Emacs
-EMACSDIR="${HOME}/.emacs.d"
-rm -rf "${EMACSDIR}"
-ln -sf "${SCRIPTDIR}/emacs.d/init.clio.el" "${SCRIPTDIR}/emacs.d/init.local.el"
-ln -sf "${SCRIPTDIR}/emacs.d" "${EMACSDIR}"
+DOOMDIR="${HOME}/.doom.d"
+rm -rf "${DOOMDIR}"
+ln -sf "${SCRIPTDIR}/doom.clio.d" "${DOOMDIR}"
 
 # Tmux
 ln -sf "${SCRIPTDIR}/tmux.conf" "${HOME}/.tmux.conf"
