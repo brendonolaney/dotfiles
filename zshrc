@@ -23,7 +23,7 @@ alias cds='cd ~/Source/dotfiles'
 # Emacs keys still better for interactive terminals imo
 set -o emacs
 
-# Use pure prompt because it's good and not bad
+# Use pure prompt
 if [[ -r "${HOME}/.zsh/pure" ]]
 then
   fpath+=("${HOME}/.zsh/pure")
