@@ -15,11 +15,10 @@ VIMDIR="${HOME}/.config/nvim"
 rm -rf "${VIMDIR}"
 ln -sf "${SCRIPTDIR}/nvim" "${VIMDIR}"
 
-# Emacs
-EMACSDIR="${HOME}/.emacs.d"
-rm -rf "${EMACSDIR}"
-ln -sf "${SCRIPTDIR}/emacs.d/init.goodsprings.el" "${SCRIPTDIR}/emacs.d/init.local.el"
-ln -sf "${SCRIPTDIR}/emacs.d" "${EMACSDIR}"
+# Doom
+DOOMDIR="${HOME}/.doom.d"
+rm -rf "${DOOMDIR}"
+ln -sf "${SCRIPTDIR}/doom.goodsprings.d" "${DOOMDIR}"
 
 # Tmux
 ln -sf "${SCRIPTDIR}/tmux.conf" "${HOME}/.tmux.conf"
