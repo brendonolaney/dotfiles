@@ -30,13 +30,27 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Org/")
 (after! org
-  (setq org-todo-keywords
-    '((sequence "TODO(t)" "|" "DONE(d)")))
-  (setq org-agenda-files (list "~/Org/home.org")))
+  (setq org-agenda-files (list "~/Org/home.org" "~/Org/strata.org")))
 
 ;; Set the default directory that projectile will search for projects within.
 (after! projectile
   (setq projectile-project-search-path '("~/Source/")))
+
+;; Email Config
+(after! mu4e
+  (set-email-account! "protonmail.com"
+    '((mu4e-sent-folder       . "/Sent")
+      (mu4e-drafts-folder     . "/Drafts")
+      (mu4e-trash-folder      . "/Trash")
+      (mu4e-refile-folder     . "/Archive")
+      (smtpmail-smtp-user     . "brendon.olaney@protonmail.com")
+      (user-mail-address      . "brendon.olaney@protonmail.com")
+      (mu4e-compose-signature . "Brendon O'Laney"))
+  t)
+  (setq smtpmail-smtp-server "127.0.0.1"
+        smtpmail-stream-type 'starttls
+        smtpmail-smtp-service 1025))
+(map! (:leader (:prefix "o" :desc "mu4e" :nv "M" #'mu4e)))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
