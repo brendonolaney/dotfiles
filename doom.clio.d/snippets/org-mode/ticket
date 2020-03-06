@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# contributor: Brendon O'Laney <brendon.olaney@clio.com>
+# name: ticket
+# key: <t
+# --
+** FI-
+:PROPERTIES:
+:ticket: https://themis.atlassian.net/browse/
+:pull-request: https://github.com/clio/themis/pull/
+:END:
