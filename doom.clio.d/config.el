@@ -39,6 +39,12 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+;; Keymap to yank rspec command
+(map! :localleader
+      :prefix "t"
+      :map (rspec-verifiable-mode-map rspec-dired-mode-map rspec-mode-map)
+      "y" #'rspec-yank-last-command)
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
