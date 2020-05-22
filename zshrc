@@ -7,9 +7,9 @@ SAVEHIST=50000
 setopt appendhistory
 
 # Useful aliases.
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
+alias v='emacs -nw'
+alias vi='emacs -nw'
+alias vim='emacs -nw'
 
 alias cp='cp -i'  # Prompt for overwrite.
 alias l='ls -aF'  # Display hidden files.
@@ -18,12 +18,13 @@ alias mv='mv -i'  # Prompt for overwrite.
 alias rm='rm -i'  # Prompt for safety.
 
 # Common directory shortcuts.
-alias cds='cd ~/Source/dotfiles'
+hash -d s=${HOME}/Source/dotfiles
+alias cds='cd ~s'
 
 # Emacs keys still better for interactive terminals imo
 set -o emacs
 
-# Use pure prompt
+# Use pure prompt (fork with vim indicator)
 if [[ -r "${HOME}/.zsh/pure" ]]
 then
   fpath+=("${HOME}/.zsh/pure")
@@ -31,7 +32,7 @@ then
   prompt pure
 else
   echo "Pure prompt is not installed for zsh."
-  echo "try \`git clone https://github.com/sindresorhus/pure.git \"\$HOME/.zsh/pure\"\`"
+  echo "try \`git clone https://github.com/dfurnes/pure.git \"\$HOME/.zsh/pure\"\`"
 fi
 
 # Set and use FZF file and history finding if available.

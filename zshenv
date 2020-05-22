@@ -4,8 +4,8 @@
 export PATH="${HOME}/Source/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
 
 # NVIM is the editor of choice
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR='emacs -nw'
+export VISUAL='emacs -nw'
 
 if [[ -r "${HOME}/.zsh/zshenv.local" ]]
 then
