@@ -21,8 +21,7 @@ alias rm='rm -i'  # Prompt for safety.
 hash -d s=${HOME}/Source/dotfiles
 alias cds='cd ~s'
 
-# Emacs keys still better for interactive terminals imo
-set -o emacs
+set -o vi
 
 # Use pure prompt (fork with vim indicator)
 if [[ -r "${HOME}/.zsh/pure" ]]
@@ -32,7 +31,7 @@ then
   prompt pure
 else
   echo "Pure prompt is not installed for zsh."
-  echo "try \`git clone https://github.com/dfurnes/pure.git \"\$HOME/.zsh/pure\"\`"
+  echo "try \`git clone https://github.com/sindresorhus/pure.git \"\$HOME/.zsh/pure\"\`"
 fi
 
 # Set and use FZF file and history finding if available.
