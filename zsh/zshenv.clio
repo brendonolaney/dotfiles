@@ -1,9 +1,5 @@
 #!/bin/zsh
 
-export GOPATH=${THEMISROOT}/microservices/webhooks
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$(go env GOPATH)/bin
-
 if [[ -r "${HOME}/.clio_profile" ]]
 then
   emulate sh -c "source $HOME/.clio_profile"
