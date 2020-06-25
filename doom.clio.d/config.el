@@ -24,7 +24,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one-light)
+(setq doom-theme 'doom-outrun-electric)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -45,6 +45,9 @@
       :map (rspec-verifiable-mode-map rspec-dired-mode-map rspec-mode-map)
       "y" #'rspec-yank-last-command)
 
+(after! flycheck
+  (setq-default flycheck-disabled-checkers '(scss)))
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -61,3 +64,11 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+
+(use-package! prettier-js
+  :hook
+  (css-mode . prettier-js-mode)
+  (html-mode . prettier-js-mode)
+  (web-mode . prettier-js-mode)
+  :config
+  (setq prettier-js-show-errors 'buffer))
