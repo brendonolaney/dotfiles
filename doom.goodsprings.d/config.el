@@ -37,25 +37,29 @@
   (setq projectile-project-search-path '("~/Source/")))
 
 ;; Email Config
-(after! mu4e
-  (set-email-account! "protonmail.com"
-    '((mu4e-sent-folder       . "/Sent")
-      (mu4e-drafts-folder     . "/Drafts")
-      (mu4e-trash-folder      . "/Trash")
-      (mu4e-refile-folder     . "/Archive")
-      (smtpmail-smtp-user     . "brendon.olaney@protonmail.com")
-      (user-mail-address      . "brendon.olaney@protonmail.com")
-      (mu4e-compose-signature . "Brendon O'Laney"))
-  t)
-  (setq smtpmail-smtp-server "127.0.0.1"
-        smtpmail-stream-type 'starttls
-        smtpmail-smtp-service 1025))
-(map! (:leader (:prefix "o" :desc "mu4e" :nv "M" #'mu4e)))
+(set-email-account! "protonmail.com"
+  '((mu4e-sent-folder       . "/Sent")
+    (mu4e-drafts-folder     . "/Drafts")
+    (mu4e-trash-folder      . "/Trash")
+    (mu4e-refile-folder     . "/Archive")
+    (smtpmail-smtp-user     . "brendon.olaney@protonmail.com")
+    (user-mail-address      . "brendon.olaney@protonmail.com")
+    (mu4e-compose-signature . "Brendon O'Laney"))
+t)
+(setq smtpmail-smtp-server "127.0.0.1"
+      smtpmail-stream-type 'starttls
+      smtpmail-smtp-service 1025)
+(map! (:leader (:prefix "o" :desc "mu4e" :nv "m" #'mu4e)))
+
+;; Quick way to open the calculator
+(map! (:leader (:prefix "o" :desc "calc" :nv "c" #'calc)))
+
+;; Quick way to open the RSS reader
+(map! (:leader (:prefix "o" :desc "elfeed" :nv "e" #'elfeed)))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
