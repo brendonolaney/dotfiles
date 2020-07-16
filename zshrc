@@ -21,7 +21,7 @@ alias rm='rm -i'  # Prompt for safety.
 hash -d s=${HOME}/Source/dotfiles
 alias cds='cd ~s'
 
-set -o vi
+set -o emacs
 
 # Use pure prompt (fork with vim indicator)
 if [[ -r "${HOME}/.zsh/pure" ]]

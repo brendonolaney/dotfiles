@@ -4,12 +4,8 @@ set searchengine duckduckgo
 guiset_quiet gui full
 guiset_quiet statuspanel left
 
-" QWERTY hintchars
-" set hintchars hjklasdfgyuiopqwertnmzxcvb
-" DVORAK hintchars
-set hintchars dhtnsaoeuifgcrlpyfbmwvzqjkx
+set hintchars hjklasdfgyuiopqwertnmzxcvb
 
 set editorcmd /Applications/Emacs.app/Contents/MacOS/Emacs
-set hintnames numeric
 set hintfiltermode vimperator
 
