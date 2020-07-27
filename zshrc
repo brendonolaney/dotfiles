@@ -7,19 +7,14 @@ SAVEHIST=50000
 setopt appendhistory
 
 # Useful aliases.
-alias v='emacs -nw'
-alias vi='emacs -nw'
-alias vim='emacs -nw'
+alias vi='nvi'
+alias vim='nvim'
 
 alias cp='cp -i'  # Prompt for overwrite.
 alias l='ls -aF'  # Display hidden files.
 alias ll='ls -lahF'  # List display, with symlinks.
 alias mv='mv -i'  # Prompt for overwrite.
 alias rm='rm -i'  # Prompt for safety.
-
-# Common directory shortcuts.
-hash -d s=${HOME}/src/dotfiles
-alias cds='cd ~s'
 
 set -o emacs
 
