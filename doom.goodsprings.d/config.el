@@ -34,7 +34,7 @@
 
 ;; Set the default directory that projectile will search for projects within.
 (after! projectile
-  (setq projectile-project-search-path '("~/Source/")))
+  (setq projectile-project-search-path '("~/src/")))
 
 ;; Email Config
 (set-email-account! "protonmail.com"

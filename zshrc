@@ -18,7 +18,7 @@ alias mv='mv -i'  # Prompt for overwrite.
 alias rm='rm -i'  # Prompt for safety.
 
 # Common directory shortcuts.
-hash -d s=${HOME}/Source/dotfiles
+hash -d s=${HOME}/src/dotfiles
 alias cds='cd ~s'
 
 set -o emacs
