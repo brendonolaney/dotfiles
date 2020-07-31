@@ -21,30 +21,30 @@
       EDITOR = "nvim";
       VISUAL = EDITOR;
       GIT_EDITOR = EDITOR;
-
       PATH = "$HOME/bin:$HOME/.emacs.d/bin:/usr/local/bin:/usr/local/sbin:$PATH";
       ZSH_CACHE_DIR = "$HOME/.cache";
     };
 
-    zplug = {
-      enable = true;
-      plugins = [
-        {
-          name = "mafredri/zsh-async";
-          tags = [
-            "from:github"
-          ];
-        }
-        {
-          name = "sindresorhus/pure";
-          tags = [
-            "use:pure.zsh"
-            "from:github"
-            "as:theme"
-          ];
-        }
-      ];
-    };
+    plugins = [
+      {
+        name = "zsh-async";
+        src = pkgs.fetchFromGitHub {
+          owner = "mafredri";
+          repo = "zsh-async";
+          rev = "490167c4aa5a870b3da1458859bcf3a9d1e24f97";
+          sha256 = "1vlr8fkk3k4cz3sxz3qmlkfsqxw251igbn9raz3lga4p213m98jb";
+        };
+      }
+      {
+        name = "pure";
+        src = pkgs.fetchFromGitHub {
+          owner = "sindresorhus";
+          repo = "pure";
+          rev = "c42bd354943ba4cf2da3ecf493fca4fef0b2722c";
+          sha256 = "1h04z7rxmca75sxdfjgmiyf1b5z2byfn6k4srls211l0wnva2r5y";
+        };
+      }
+    ];
   };
 
   programs.fzf = {
