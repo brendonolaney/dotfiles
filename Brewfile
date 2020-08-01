@@ -39,6 +39,7 @@ brew "shellcheck"
 brew "stlink"
 brew "streamlink"
 brew "the_silver_searcher"
+brew "tmux"
 brew "tree"
 brew "wget"
 brew "zsh-completions", link: false
