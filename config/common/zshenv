@@ -1,5 +1,5 @@
 PATH="/usr/local/bin:/usr/local/sbin:${PATH}"  # Homebrew bins
-PATH="${HOME}/.emacs.d/bin"  # DOOM bin
+PATH="${HOME}/.emacs.d/bin:${PATH}"  # DOOM bin
 PATH="${HOME}/src/dotfiles/bin:${PATH}"  # User bins
 export PATH
 
