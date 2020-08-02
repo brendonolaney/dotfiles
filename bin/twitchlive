@@ -1,0 +1,99 @@
+#!/bin/sh
+
+ORIENTATION='v'
+CLEAR=0
+TIMEOUT=0
+LINK=0
+
+usage () { echo "Usage: ${0} [-h|--horizontal] [-c|--clear] [-t|--timeout <int>] [-l|--include-link]" 1>&2; exit 1; }
+
+
+while :
+do
+  case "${1}" in
+    -z|--horizontal)
+      ORIENTATION='h'
+      ;;
+    -c|--clear)
+      CLEAR=1
+      ;;
+    -t|--timeout)
+      if [ "${2}" -gt 0 ]
+      then
+        case "${2}" in
+          ''|*[!0-9]*)
+            usage
+            ;;
+          *)
+            TIMEOUT="${2}"
+        esac
+      else
+        usage
+      fi
+    shift
+    ;;
+  -l|--include-link)
+    LINK=1
+    ;;
+  -h|--help)
+    usage
+    ;;
+  *)
+    break
+    ;;
+  esac
+  shift
+done
+
+if [ "${ORIENTATION}" = 'h' ];
+then
+  SEP=' | '
+else
+  SEP='\n'
+fi
+
+while :
+do
+  if [ "${ORIENTATION}" = 'h' ]
+  then
+    PRE_OUTPUT=$(printf '%s#' 'Live Streams: ')
+  else
+    PRE_OUTPUT=$(printf '%s\n#' 'Live Streams:')
+  fi
+
+  while read -r STREAM;
+  do
+    RESULT=$(streamlink --twitch-disable-hosting "twitch.tv/${STREAM}" 2>/dev/null | grep "Available")
+    if [ ${#RESULT} -gt 0 ]
+    then
+      if [ ${LINK} -gt 0 ]
+      then
+        PRE_OUTPUT=$(printf '%s%s%s%s#' "${PRE_OUTPUT}" "${STREAM}" ", streamlink twitch.tv/${STREAM}" "${SEP}")
+      else
+        PRE_OUTPUT=$(printf '%s%s%s#' "${PRE_OUTPUT}" "${STREAM}" "${SEP}")
+      fi
+    fi
+  done < "$HOME/.twitchlive"
+
+  if [ "${ORIENTATION}" = 'h' ]
+  then
+    OUTPUT=$(echo "${PRE_OUTPUT}" | sed 's/\#//g')
+    OUTPUT=$(echo "${OUTPUT}" | sed 's/ | $//')
+  else
+    OUTPUT=$(echo "${PRE_OUTPUT}" | sed 's/\#//g')
+  fi
+
+  if [ ${CLEAR} -gt 0 ]
+  then
+    clear
+  fi
+
+  printf '%s' "${OUTPUT}"
+  if [ "$TIMEOUT" -gt 0 ]
+  then
+    sleep "${TIMEOUT}"
+  else
+    exit 0
+  fi
+done
+

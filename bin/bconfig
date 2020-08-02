@@ -1,0 +1,207 @@
+#!/bin/sh
+
+DOTFILES_DIR="${HOME}/src/dotfiles"
+CONFIG_DIR="${DOTFILES_DIR}/config"
+RESULT_DIR="${DOTFILES_DIR}/.result"
+
+if [ "${HOST}" = "brendono'l" ]
+then
+  # Work computer
+  MACHINE="arroyo"
+else
+  # Personal computer
+  MACHINE="goodsprings"
+fi
+
+NVIMINIT_TARGET="${HOME}/.config/nvim/init.vim"
+NVIMINIT_SOURCE="${RESULT_DIR}/init.vim"
+ZSHRC_TARGET="${HOME}/.zshrc"
+ZSHRC_SOURCE="${RESULT_DIR}/zshrc"
+ZSHENV_TARGET="${HOME}/.zshenv"
+ZSHENV_SOURCE="${RESULT_DIR}/zshenv"
+TMUXCONF_TARGET="${HOME}/.tmux.conf"
+TMUXCONF_SOURCE="${RESULT_DIR}/tmux.conf"
+DOOMCONFIG_TARGET="${HOME}/.doom.d/config.el"
+DOOMCONFIG_SOURCE="${RESULT_DIR}/doomconfig.el"
+DOOMINIT_TARGET="${HOME}/.doom.d/init.el"
+DOOMINIT_SOURCE="${RESULT_DIR}/doominit.el"
+DOOMPACKAGES_TARGET="${HOME}/.doom.d/packages.el"
+DOOMPACKAGES_SOURCE="${RESULT_DIR}/doompackages.el"
+BREWFILE_TARGET="${HOME}/.Brewfile"
+BREWFILE_SOURCE="${RESULT_DIR}/Brewfile"
+GITCONFIG_TARGET="${HOME}/.gitconfig"
+GITCONFIG_SOURCE="${RESULT_DIR}/gitconfig"
+SSHCONFIG_TARGET="${HOME}/.ssh/config"
+SSHCONFIG_SOURCE="${RESULT_DIR}/sshconfig"
+STREAMLINKRC_TARGET="${HOME}/.streamlinkrc"
+STREAMLINKRC_SOURCE="${RESULT_DIR}/streamlinkrc"
+
+setup_dirs() {
+  mkdir -p "${HOME}/.config/nvim"
+  mkdir -p "${HOME}/.ssh"
+  mkdir -p "${HOME}/.doom.d"
+  mkdir -p "${HOME}/.emacs.d"
+}
+
+link() {
+  if [ -f "${1}" ]
+  then
+    ln -sf "${1}" "${2}"
+  fi
+}
+
+compose_files() {
+  # Combine common and machine specific config files
+  if [ -r "${CONFIG_DIR}/common/${1}" ] && [ -r "${CONFIG_DIR}/${MACHINE}/${1}" ]
+  then
+    cat "${CONFIG_DIR}/common/${1}" "${CONFIG_DIR}/${MACHINE}/${1}" > "${RESULT_DIR}/${1}"
+  elif [ -r "${CONFIG_DIR}/${MACHINE}/${1}" ]
+  then
+    cp "${CONFIG_DIR}/${MACHINE}/${1}" "${RESULT_DIR}/${1}"
+  elif [ -r "${CONFIG_DIR}/common/${1}" ]
+  then
+    cp "${CONFIG_DIR}/common/${1}" "${RESULT_DIR}/${1}"
+  fi
+}
+
+build_files() {
+  mkdir -p "${RESULT_DIR}"
+  compose_files "init.vim"  
+  compose_files "zshrc"
+  compose_files "zshenv"
+  compose_files "tmux.conf"
+  compose_files "doomconfig.el"
+  compose_files "doominit.el"
+  compose_files "doompackages.el"
+  compose_files "Brewfile"
+  compose_files "gitconfig"
+  compose_files "sshconfig"
+  compose_files "streamlinkrc"
+}
+
+link_files() {
+  link "${NVIMINIT_SOURCE}" "${NVIMINIT_TARGET}"
+  link "${ZSHRC_SOURCE}" "${ZSHRC_TARGET}"
+  link "${ZSHENV_SOURCE}" "${ZSHENV_TARGET}"
+  link "${TMUXCONF_SOURCE}" "${TMUXCONF_TARGET}"
+  link "${DOOMCONFIG_SOURCE}" "${DOOMCONFIG_TARGET}"
+  link "${DOOMINIT_SOURCE}" "${DOOMINIT_TARGET}"
+  link "${DOOMPACKAGES_SOURCE}" "${DOOMPACKAGES_TARGET}"
+  link "${BREWFILE_SOURCE}" "${BREWFILE_TARGET}"
+  link "${GITCONFIG_SOURCE}" "${GITCONFIG_TARGET}"
+  link "${SSHCONFIG_SOURCE}" "${SSHCONFIG_TARGET}"
+  link "${STREAMLINKRC_SOURCE}" "${STREAMLINKRC_TARGET}"
+}
+
+clean() {
+  rm -rf "${RESULT_DIR}"
+  rm -f "${NVIMINIT_TARGET}"
+  rm -f "${ZSHRC_TARGET}"
+  rm -f "${ZSHENV_TARGET}"
+  rm -f "${TMUXCONF_TARGET}"
+  rm -f "${DOOMCONFIG_TARGET}"
+  rm -f "${DOOMINIT_TARGET}"
+  rm -f "${DOOMPACKAGES_TARGET}"
+  rm -f "${BREWFILE_TARGET}"
+  rm -f "${GITCONFIG_TARGET}"
+  rm -f "${SSHCONFIG_TARGET}"
+  rm -f "${STREAMLINKRC_TARGET}"
+}
+
+install_homebrew() {
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+}
+
+install_doom() {
+  rm -rf "${HOME}/.emacs.d"
+  git clone --depth 1 "https://github.com/hlissner/doom-emacs" \
+                      "${HOME}/.emacs.d"
+  ~/.emacs.d/bin/doom install
+}
+
+install_fzf() {
+  /usr/local/opt/fzf/install
+}
+
+install_pure() {
+  mkdir -p "${HOME}/.zsh/"
+  git clone https://github.com/sindresorhus/pure.git "${HOME}/.zsh/pure"
+}
+
+pre_install() {
+  install_homebrew
+}
+
+post_install() {
+  install_doom
+  install_fzf
+  install_pure
+}
+
+set_packages() {
+  brew bundle cleanup --global --force
+  brew bundle install --global --no-upgrade
+}
+
+upgrade_packages() {
+  brew bundle cleanup --global --force
+  brew bundle install --global
+}
+
+reconfigure() {
+  clean
+  setup_dirs
+  build_files
+  link_files
+}
+
+init() {
+  reconfigure
+  pre_install
+  set_packages
+  post_install
+}
+
+sync() {
+  reconfigure
+  set_packages
+}
+
+upgrade() {
+  reconfigure
+  upgrade_packages
+}
+
+usage() {
+  echo "bconfig [COMMAND]"
+  echo ""
+  echo "Commands:"
+  echo ""
+  echo "  init:        Installs everything for the first time."
+  echo "  sync:        Applies all configuration changes, including packages."
+  echo "  upgrade:     Upgrades all packages."
+  echo "  reconfigure: Applies all configuration changes, except packages."
+}
+
+main() {
+  case "${1}" in
+    "init")
+      init
+      ;;
+    "sync")
+      sync
+      ;;
+    "upgrade")
+      upgrade
+      ;;
+    "reconfigure")
+      reconfigure
+      ;;
+    *)
+      usage
+      ;;
+  esac
+}
+
+main "${1}"
+

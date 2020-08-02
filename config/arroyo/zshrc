@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 THEMISROOT="${HOME}/clio/themis"
 hash -d r="${THEMISROOT}"
 alias cdr='cd ~r'

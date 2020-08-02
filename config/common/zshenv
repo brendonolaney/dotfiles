@@ -1,0 +1,9 @@
+PATH="/usr/local/bin:/usr/local/sbin:${PATH}"  # Homebrew bins
+PATH="${HOME}/.emacs.d/bin"  # DOOM bin
+PATH="${HOME}/src/dotfiles/bin:${PATH}"  # User bins
+export PATH
+
+export EDITOR='nvim'
+export VISUAL='nvim'
+export GITEDITOR='nvim'
+
