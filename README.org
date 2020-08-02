@@ -2,4 +2,7 @@
 
 ** Quickstart
 
-
+#+BEGIN_SRC sh
+git clone https://github.com/brendonolaney/dotfiles.git ~/src/dotfiles
+~/src/dotfiles/bin/bconfig init
+#+END_SRC
