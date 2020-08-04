@@ -2,6 +2,7 @@
 
 DOTFILES_DIR="${HOME}/src/dotfiles"
 CONFIG_DIR="${DOTFILES_DIR}/config"
+BIN_DIR="${DOTFILES_DIR}/bin"
 RESULT_DIR="${DOTFILES_DIR}/.result"
 
 
@@ -14,6 +15,9 @@ else
   echo "not work"
   MACHINE="goodsprings"
 fi
+
+BIN_TARGET="${HOME}/bin"
+BIN_SOURCE="${RESULT_DIR}/bin"
 
 NVIMINIT_TARGET="${HOME}/.config/nvim/init.vim"
 NVIMINIT_SOURCE="${RESULT_DIR}/init.vim"
@@ -66,6 +70,16 @@ compose_files() {
   fi
 }
 
+copy_bins() {
+  mkdir -p "${BIN_SOURCE}"
+  cp "${BIN_DIR}"/common/* "${RESULT_DIR}"/bin
+  cp "${BIN_DIR}"/"${MACHINE}"/* "${RESULT_DIR}"/bin
+}
+
+link_bins() {
+  ln -sf "${BIN_SOURCE}" "${BIN_TARGET}"
+}
+
 build_files() {
   mkdir -p "${RESULT_DIR}"
   compose_files "init.vim"  
@@ -97,6 +111,7 @@ link_files() {
 
 clean() {
   rm -rf "${RESULT_DIR}"
+  rm -f "${BIN_TARGET}"
   rm -f "${NVIMINIT_TARGET}"
   rm -f "${ZSHRC_TARGET}"
   rm -f "${ZSHENV_TARGET}"
@@ -131,9 +146,14 @@ install_pure() {
 }
 
 install_vimplug() {
-  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  sh -c 'curl -fLo "${HOME}/.local/share/nvim/site/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   nvim +PlugInstall +qall
+}
+
+clio_setup() {
+  rm -rf /tmp/clio_setup
+  git clone git@github.com:/clio/clio_setup
+  RUBYLIB=/tmp/clio_setup/lib /tmp/clio_setup/exe/clio_setup
 }
 
 pre_install() {
@@ -145,6 +165,10 @@ post_install() {
   install_fzf
   install_pure
   install_vimplug
+  if [ "${MACHINE}" = "arroyo" ]
+  then
+    clio_setup
+  fi
 }
 
 set_packages() {
@@ -160,7 +184,9 @@ upgrade_packages() {
 reconfigure() {
   clean
   setup_dirs
+  copy_bins
   build_files
+  link_bins
   link_files
 }
 
