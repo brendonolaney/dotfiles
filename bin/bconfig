@@ -4,12 +4,14 @@ DOTFILES_DIR="${HOME}/src/dotfiles"
 CONFIG_DIR="${DOTFILES_DIR}/config"
 RESULT_DIR="${DOTFILES_DIR}/.result"
 
-if [ "${HOST}" = "brendono'l" ]
+
+if [ "$(hostname)" = "brendono'l" ]
 then
   # Work computer
   MACHINE="arroyo"
 else
   # Personal computer
+  echo "not work"
   MACHINE="goodsprings"
 fi
 
