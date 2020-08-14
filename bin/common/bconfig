@@ -12,7 +12,6 @@ then
   MACHINE="arroyo"
 else
   # Personal computer
-  echo "not work"
   MACHINE="goodsprings"
 fi
 
