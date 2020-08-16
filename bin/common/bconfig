@@ -1,10 +1,10 @@
 #!/bin/sh
 
-DOTFILES_DIR="${HOME}/src/dotfiles"
-CONFIG_DIR="${DOTFILES_DIR}/config"
-BIN_DIR="${DOTFILES_DIR}/bin"
-RESULT_DIR="${DOTFILES_DIR}/.result"
-
+DOTFILES_DIR="${HOME}"/src/dotfiles
+CONFIG_DIR="${DOTFILES_DIR}"/config
+BIN_DIR="${DOTFILES_DIR}"/bin
+RESULT_DIR="${DOTFILES_DIR}"/.result
+SHARE_DIR="${DOTFILES_DIR}"/share
 
 if [ "$(hostname)" = "brendono'l" ]
 then
@@ -15,37 +15,17 @@ else
   MACHINE="goodsprings"
 fi
 
-BIN_TARGET="${HOME}/bin"
+SHARE_TARGET="${HOME}/.share/bconfig"
+SHARE_SOURCE="${RESULT_DIR}/share"
+BIN_TARGET="${HOME}/.bin"
 BIN_SOURCE="${RESULT_DIR}/bin"
 
-NVIMINIT_TARGET="${HOME}/.config/nvim/init.vim"
-NVIMINIT_SOURCE="${RESULT_DIR}/init.vim"
-ZSHRC_TARGET="${HOME}/.zshrc"
-ZSHRC_SOURCE="${RESULT_DIR}/zshrc"
-ZSHENV_TARGET="${HOME}/.zshenv"
-ZSHENV_SOURCE="${RESULT_DIR}/zshenv"
-TMUXCONF_TARGET="${HOME}/.tmux.conf"
-TMUXCONF_SOURCE="${RESULT_DIR}/tmux.conf"
-DOOMCONFIG_TARGET="${HOME}/.doom.d/config.el"
-DOOMCONFIG_SOURCE="${RESULT_DIR}/doomconfig.el"
-DOOMINIT_TARGET="${HOME}/.doom.d/init.el"
-DOOMINIT_SOURCE="${RESULT_DIR}/doominit.el"
-DOOMPACKAGES_TARGET="${HOME}/.doom.d/packages.el"
-DOOMPACKAGES_SOURCE="${RESULT_DIR}/doompackages.el"
-BREWFILE_TARGET="${HOME}/.Brewfile"
-BREWFILE_SOURCE="${RESULT_DIR}/Brewfile"
-GITCONFIG_TARGET="${HOME}/.gitconfig"
-GITCONFIG_SOURCE="${RESULT_DIR}/gitconfig"
-SSHCONFIG_TARGET="${HOME}/.ssh/config"
-SSHCONFIG_SOURCE="${RESULT_DIR}/sshconfig"
-STREAMLINKRC_TARGET="${HOME}/.streamlinkrc"
-STREAMLINKRC_SOURCE="${RESULT_DIR}/streamlinkrc"
-
 setup_dirs() {
-  mkdir -p "${HOME}/.config/nvim"
-  mkdir -p "${HOME}/.ssh"
-  mkdir -p "${HOME}/.doom.d"
-  mkdir -p "${HOME}/.emacs.d"
+  mkdir -p "${HOME}"/.share
+  mkdir -p "${HOME}"/.config/nvim
+  mkdir -p "${HOME}"/.ssh
+  mkdir -p "${HOME}"/.doom.d
+  mkdir -p "${HOME}"/.emacs.d
 }
 
 link() {
@@ -69,10 +49,27 @@ compose_files() {
   fi
 }
 
+copy_share() {
+  mkdir -p "${SHARE_SOURCE}"
+  cp "${SHARE_DIR}"/common/* "${SHARE_SOURCE}"
+  # cp "${SHARE_DIR}"/"${MACHINE}"/* "${SHARE_SOURCE}"
+}
+
+link_share() {
+  ln -sf "${SHARE_SOURCE}" "${SHARE_TARGET}"
+}
+
+source_share() {
+  # shellcheck source=../../share/common/file_links.sh
+  . "${SHARE_TARGET}"/file_links.sh
+  # shellcheck source=../../share/common/install_externals.sh
+  . "${SHARE_TARGET}"/install_externals.sh
+}
+
 copy_bins() {
   mkdir -p "${BIN_SOURCE}"
-  cp "${BIN_DIR}"/common/* "${RESULT_DIR}"/bin
-  cp "${BIN_DIR}"/"${MACHINE}"/* "${RESULT_DIR}"/bin
+  cp "${BIN_DIR}"/common/* "${BIN_SOURCE}"
+  cp "${BIN_DIR}"/"${MACHINE}"/* "${BIN_SOURCE}"
 }
 
 link_bins() {
@@ -81,6 +78,8 @@ link_bins() {
 
 build_files() {
   mkdir -p "${RESULT_DIR}"
+  copy_share
+  copy_bins
   compose_files "init.vim"  
   compose_files "zshrc"
   compose_files "zshenv"
@@ -95,6 +94,10 @@ build_files() {
 }
 
 link_files() {
+  link_share
+  link_bins
+  source_share
+  clean_files
   link "${NVIMINIT_SOURCE}" "${NVIMINIT_TARGET}"
   link "${ZSHRC_SOURCE}" "${ZSHRC_TARGET}"
   link "${ZSHENV_SOURCE}" "${ZSHENV_TARGET}"
@@ -108,9 +111,13 @@ link_files() {
   link "${STREAMLINKRC_SOURCE}" "${STREAMLINKRC_TARGET}"
 }
 
-clean() {
+clean_setup() {
   rm -rf "${RESULT_DIR}"
+  rm -rf "${SHARE_TARGET}"
   rm -f "${BIN_TARGET}"
+}
+
+clean_files() {
   rm -f "${NVIMINIT_TARGET}"
   rm -f "${ZSHRC_TARGET}"
   rm -f "${ZSHENV_TARGET}"
@@ -124,46 +131,12 @@ clean() {
   rm -f "${STREAMLINKRC_TARGET}"
 }
 
-install_homebrew() {
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-}
-
-install_doom() {
-  rm -rf "${HOME}/.emacs.d"
-  git clone --depth 1 "https://github.com/hlissner/doom-emacs" \
-                      "${HOME}/.emacs.d"
-  ~/.emacs.d/bin/doom install
-}
-
-install_fzf() {
-  /usr/local/opt/fzf/install
-}
-
-install_pure() {
-  mkdir -p "${HOME}/.zsh/"
-  git clone https://github.com/sindresorhus/pure.git "${HOME}/.zsh/pure"
-}
-
-install_vimplug() {
-  sh -c 'curl -fLo "${HOME}/.local/share/nvim/site/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  nvim +PlugInstall +qall
-}
-
-clio_setup() {
-  rm -rf /tmp/clio_setup
-  git clone git@github.com:/clio/clio_setup
-  RUBYLIB=/tmp/clio_setup/lib /tmp/clio_setup/exe/clio_setup
-}
-
 pre_install() {
   install_homebrew
 }
 
 post_install() {
-  install_doom
-  install_fzf
-  install_pure
-  install_vimplug
+  install_externals
   if [ "${MACHINE}" = "arroyo" ]
   then
     clio_setup
@@ -180,13 +153,15 @@ upgrade_packages() {
   brew bundle install --global
 }
 
-reconfigure() {
-  clean
+build_config() {
   setup_dirs
-  copy_bins
   build_files
-  link_bins
   link_files
+}
+
+reconfigure() {
+  clean_setup
+  build_config
 }
 
 init() {
@@ -236,6 +211,7 @@ main() {
       ;;
   esac
 }
+
 
 main "${1}"
 
