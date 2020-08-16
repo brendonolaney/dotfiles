@@ -32,4 +32,5 @@
   smtpmail-smtp-server "127.0.0.1"
   smtpmail-smtp-service 1025)
 
-(add-to-list 'gnutls-trustfiles (expand-file-name "~/Library/ApplicationSupport/protonmail/bridge/cert.pem"))
+(after! mu4e
+  (add-to-list 'gnutls-trustfiles (expand-file-name "~/Library/ApplicationSupport/protonmail/bridge/cert.pem")))
