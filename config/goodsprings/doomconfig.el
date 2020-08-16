@@ -1,10 +1,10 @@
 (setq user-full-name "Brendon O'Laney"
-      user-mail-address "brendon.olaney@protonmail.com")
+  user-mail-address "brendon.olaney@protonmail.com")
 
-(setq org-directory "~/Org/")
+(setq org-directory "~/.org/")
 
 (after! org
-  (setq org-agenda-files (list "~/Org/home.org" "~/Org/strata.org")))
+  (setq org-agenda-files (list "~/.org/home.org" "~/.org/strata.org")))
 (after! projectile
   (setq projectile-project-search-path '("~/src/")))
 
