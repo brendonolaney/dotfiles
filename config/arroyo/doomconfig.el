@@ -11,7 +11,7 @@
 (after! org
   (setq org-todo-keywords
     '((sequence "TODO(t)" "ASSIGNED(a)" "IMPLEMENTING(i)" "REVIEW(r)" "QA(q)" "DEPLOY(y)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(n)")))
-  (setq org-agenda-files (list "~/Org/"))
+  (setq org-agenda-files (list "~/Org/" "~/Org/sprints"))
   (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0/libexec/ditaa-0.11.0-standalone.jar"))
 
 (map! :localleader
