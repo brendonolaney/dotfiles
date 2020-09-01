@@ -10,7 +10,8 @@
 (setq org-directory "~/.org/")
 (after! org
   (setq org-todo-keywords
-    '((sequence "TODO(t)" "ASSIGNED(a)" "IMPLEMENTING(i)" "REVIEW(r)" "QA(q)" "DEPLOY(y)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(n)")))
+        '((sequence "TODO(t)" "ASSIGNED(a)" "IMPLEMENTING(i)" "REVIEW(r)" "QA(q)" "DEPLOY(y)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(n)")
+          (sequence "[ ](T)" "|" "[X](D)")))
   (setq org-agenda-files (list "~/.org/" "~/.org/sprints/"))
   (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0/libexec/ditaa-0.11.0-standalone.jar"))
 
