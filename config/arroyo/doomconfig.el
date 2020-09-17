@@ -7,11 +7,12 @@
 (setq user-full-name "Brendon O'Laney"
       user-mail-address "brendon.olaney@clio.com")
 
-(setq org-directory "~/Org/")
+(setq org-directory "~/.org/")
 (after! org
   (setq org-todo-keywords
-    '((sequence "TODO(t)" "ASSIGNED(a)" "IMPLEMENTING(i)" "REVIEW(r)" "QA(q)" "DEPLOY(y)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(n)")))
-  (setq org-agenda-files (list "~/Org/"))
+        '((sequence "TODO(t)" "ASSIGNED(a)" "IMPLEMENTING(i)" "REVIEW(r)" "QA(q)" "DEPLOY(y)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(n)")
+          (sequence "[ ](T)" "|" "[X](D)")))
+  (setq org-agenda-files (list "~/.org/" "~/.org/sprints/"))
   (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0/libexec/ditaa-0.11.0-standalone.jar"))
 
 (map! :localleader
