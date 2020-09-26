@@ -1,0 +1,4 @@
+#!/bin/sh
+
+brew bundle cleanup --global --force
+brew bundle install --global --no-upgrade
