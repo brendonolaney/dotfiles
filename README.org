@@ -3,6 +3,8 @@
 ** Quickstart
 
 #+BEGIN_SRC sh
-git clone https://github.com/brendonolaney/dotfiles.git ~/src/dotfiles
-~/src/dotfiles/bin/bconfig init
+git clone --bare git@github.com:brendonolaney/dotfiles.git $HOME/src/dotfiles
+git checkout
 #+END_SRC
+
+Then restart the shell and use =config= like git (see zshrc)
