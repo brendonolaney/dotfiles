@@ -1,8 +1,0 @@
-THEMISROOT="${HOME}/clio/themis"
-hash -d r="${THEMISROOT}"
-alias cdr='cd ~r'
-
-if [[ $(which ruby) == '/usr/bin/ruby' ]]
-then
-  emulate sh -c "source ${HOME}/.clio_profile"
-fi
