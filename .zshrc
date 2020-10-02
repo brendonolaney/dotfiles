@@ -12,7 +12,6 @@ alias l='ls -aF'  # Display hidden files.
 alias ll='ls -lahF'  # List display, with symlinks.
 alias mv='mv -i'  # Prompt for overwrite.
 alias rm='rm -i'  # Prompt for safety.
-alias config='/usr/bin/git --git-dir=$HOME/src/dotfiles/ --work-tree=$HOME'  # Access dotfiles
 
 set -o emacs
 
@@ -30,3 +29,11 @@ then
   source ~/.fzf.zsh
 fi
 
+THEMISROOT="${HOME}/clio/themis"
+hash -d r="${THEMISROOT}"
+alias cdr='cd ~r'
+
+if [[ $(which ruby) == '/usr/bin/ruby' ]]
+then
+  emulate sh -c "source ${HOME}/.clio_profile"
+fi

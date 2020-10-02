@@ -1,3 +1,7 @@
 [user]
 name = Brendon O'Laney
 email = brendon.olaney@protonmail.com
+
+[core]
+excludesfile = /Users/brendonolaney/.gitignore_global
+

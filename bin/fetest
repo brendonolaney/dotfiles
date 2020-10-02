@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "Running: yarn --cwd ~/clio/themis/components/manage run test:main:once"
+yarn --cwd ~/clio/themis/components/manage run test:main:once

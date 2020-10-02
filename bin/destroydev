@@ -1,0 +1,24 @@
+#!/bin/sh
+
+while true;
+do
+  printf "WARNING: This will destroy and rebuild the Themis development environment. Continue? [y/n] "
+  read -r response
+  case $response in
+    [Yy]* )
+      break;;
+    [Nn]* )
+      echo "Cowardly refusing to destroy the thing."
+      exit;;
+    * )
+      echo "Please answer yes or no.";;
+  esac
+done
+
+cd "${HOME}/clio/themis" || exit
+vagrant destroy --force
+cd /tmp || exit
+rm -rf /tmp/clio_setup
+git clone git@github.com:/clio/clio_setup
+RUBYLIB=/tmp/clio_setup/lib /tmp/clio_setup/exe/clio_setup
+

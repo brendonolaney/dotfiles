@@ -5,40 +5,29 @@
 (setq doom-theme 'doom-one-light)
 
 (setq user-full-name "Brendon O'Laney"
-  user-mail-address "brendon.olaney@protonmail.com")
+      user-mail-address "brendon.olaney@clio.com")
 
 (setq org-directory "~/.org/")
-
 (after! org
-  (setq org-agenda-files (list "~/.org/home.org" "~/.org/strata.org")))
-(after! projectile
-  (setq projectile-project-search-path '("~/src/")))
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "ASSIGNED(a)" "IMPLEMENTING(i)" "REVIEW(r)" "QA(q)" "DEPLOY(y)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(n)")
+          (sequence "[ ](T)" "|" "[X](D)")))
+  (setq org-agenda-files (list "~/.org/" "~/.org/sprints/"))
+  (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0/libexec/ditaa-0.11.0-standalone.jar"))
 
-;; Quick way to open the calculator and elfeed
-(map! (:leader (:prefix "o" :desc "calc" :nv "c" #'calc)))
-(map! (:leader (:prefix "o" :desc "elfeed" :nv "e" #'elfeed)))
+(map! :localleader
+      :prefix "t"
+      :map (rspec-verifiable-mode-map rspec-dired-mode-map rspec-mode-map)
+      "y" #'rspec-yank-last-command)
 
-;; Email configuration
-(setq mu4e-maildir "~/.mail"
-  mu4e-attachment-dir "~/Downloads"
-  mu4e-sent-folder "/Sent"
-  mu4e-drafts-folder "/Drafts"
-  mu4e-trash-folder "/Trash"
-  mu4e-refile-folder "/Archive")
+(after! flycheck
+  (setq-default flycheck-disabled-checkers '(scss)))
 
-(setq user-mail-address "brendon.olaney@protonmail.com"
-  user-full-name  "Brendon O'Laney")
+(use-package! prettier-js
+  :hook
+  (css-mode . prettier-js-mode)
+  (html-mode . prettier-js-mode)
+  (web-mode . prettier-js-mode)
+  :config
+  (setq prettier-js-show-errors 'buffer))
 
-(setq mu4e-get-mail-command "mbsync protonmail"
-  mu4e-change-filenames-when-moving t
-  mu4e-update-interval 120)
-
-(setq message-send-mail-function 'smtpmail-send-it
-  smtpmail-auth-credentials "~/.authinfo.gpg"
-  smtpmail-smtp-server "127.0.0.1"
-  smtpmail-smtp-service 1025)
-
-(setenv "GPG_AGENT_INFO" nil)
-
-(after! mu4e
-  (add-to-list 'gnutls-trustfiles (expand-file-name "~/Library/ApplicationSupport/protonmail/bridge/cert.pem")))
