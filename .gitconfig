@@ -5,3 +5,12 @@ email = brendon.olaney@protonmail.com
 [core]
 excludesfile = /Users/brendonolaney/.gitignore_global
 
+[user]
+  name = Brendon O'Laney
+  email = brendon.olaney@clio.com
+
+[github]
+  user = brendonolaney-clio
+
+[url "git@github.com:clio"]
+  insteadOf = https://github.com/clio
