@@ -143,7 +143,8 @@
        (ruby              ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
          +rbenv
          +rails
-         +lsp)
+         ;;+lsp
+         )
        ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;;scheme            ; a fully conniving family of lisps
