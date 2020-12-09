@@ -16,7 +16,6 @@ do
 done
 
 cd "${HOME}/clio/themis" || exit
-vagrant destroy --force
 cd /tmp || exit
 rm -rf /tmp/clio_setup
 git clone git@github.com:/clio/clio_setup
