@@ -10,7 +10,7 @@ excludesfile = /Users/brendonolaney/.gitignore_global
   email = brendon.olaney@clio.com
 
 [github]
-  user = brendonolaney-clio
+	user = brendonolaney
 
 [url "git@github.com:clio"]
   insteadOf = https://github.com/clio
