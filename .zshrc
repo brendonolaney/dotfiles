@@ -14,7 +14,7 @@ alias mv='mv -i'  # Prompt for overwrite.
 alias rm='rm -i'  # Prompt for safety.
 alias config='/usr/bin/git --git-dir=$HOME/src/dotfiles/ --work-tree=$HOME'
 
-set -o emacs
+set -o vi
 
 # Use pure prompt
 if [[ -r "${HOME}/.zsh/pure" ]]
