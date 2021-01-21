@@ -23,6 +23,18 @@
 (after! flycheck
   (setq-default flycheck-disabled-checkers '(scss)))
 
+(use-package! emms
+  :config
+  (require 'emms-setup)
+  (emms-all)
+  (emms-default-players)
+  (setq emms-source-file-default-directory "~/Music/Music")
+  (map! (:leader (:prefix "e" :desc "emms next" :nv "j" #'emms-next)))
+  (map! (:leader (:prefix "e" :desc "emms previous" :nv "k" #'emms-previous)))
+  (map! (:leader (:prefix "e" :desc "emms pause" :nv "x" #'emms-pause)))
+  (map! (:leader (:prefix "e" :desc "emms pause" :nv "d" #'emms-play-directory)))
+  (map! (:leader (:desc "emms" :nv "`" #'emms))))
+
 (use-package! prettier-js
   :hook
   (css-mode . prettier-js-mode)

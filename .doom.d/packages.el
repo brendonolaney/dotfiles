@@ -3,3 +3,5 @@
 
 (package! prettier-js
   :recipe (:host github :repo "prettier/prettier-emacs"))
+
+(package! emms)
