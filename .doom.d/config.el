@@ -3,6 +3,7 @@
 (setq doom-font (font-spec :family "Source Code Pro" :size 14 :weight 'semi-bold))
 (setq display-line-numbers-type t)
 (setq doom-theme 'doom-flatwhite)
+(add-hook 'window-setup-hook 'toggle-frame-maximized t)
 
 (setq user-full-name "Brendon O'Laney"
   user-mail-address "brendon.olaney@protonmail.com")
@@ -17,6 +18,7 @@
 ;; Quick way to open the calculator and elfeed
 (map! (:leader (:prefix "o" :desc "calc" :nv "c" #'calc)))
 (map! (:leader (:prefix "o" :desc "elfeed" :nv "e" #'elfeed)))
+(map! (:leader (:prefix "o" :desc "md4rd" :nv "M" #'md4rd)))
 
 ;; Email configuration
 (setq mu4e-maildir "~/.mail"
@@ -37,3 +39,10 @@
 (setenv "GPG_AGENT_INFO" nil)
 (after! mu4e
   (add-to-list 'gnutls-trustfiles (expand-file-name "~/Library/ApplicationSupport/protonmail/bridge/cert.pem")))
+
+;; Twitter
+(setq twittering-icon-mode t)
+(setq twittering-connection-type-order '(wget curl urllib-http native urllib-https))
+
+;; Reddit
+(setq md4rd-subs-active '(all vancouver))

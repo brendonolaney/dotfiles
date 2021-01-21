@@ -79,7 +79,6 @@
        (lookup           ; helps you navigate your code and documentation
         +docsets)        ; ...or in Dash docsets locally
        ;;lsp
-       macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
@@ -89,6 +88,8 @@
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
+
+       :os macos
 
        :lang
        ;;agda              ; types of types of types of types...
@@ -154,7 +155,7 @@
 
        :email
        ;;(
-       ;;mu4e
+       mu4e
        ;;+gmail)
        ;;notmuch
        ;;(wanderlust +gmail)
@@ -163,7 +164,7 @@
        ;;calendar
        ;;irc               ; how neckbeards socialize
        (rss +org)        ; emacs as an RSS reader
-       ;;twitter           ; twitter client https://twitter.com/vnought
+       twitter           ; twitter client https://twitter.com/vnought
 
        :config
        ;;literate
