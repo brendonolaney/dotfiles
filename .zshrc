@@ -3,6 +3,7 @@ HISTFILE=~/.zhistory
 HISTSIZE=50000
 SAVEHIST=50000
 setopt appendhistory
+setopt share_history
 
 # Useful aliases.
 alias vim='nvim'
