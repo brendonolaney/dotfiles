@@ -25,8 +25,3 @@ install_vimplug() {
   nvim +PlugInstall +qall
 }
 
-clio_setup() {
-  rm -rf /tmp/clio_setup
-  git clone git@github.com:/clio/clio_setup
-  RUBYLIB=/tmp/clio_setup/lib /tmp/clio_setup/exe/clio_setup
-}
