@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Stuff that isn't in, or shouldn't be in, package management.
+
 install_homebrew() {
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 }
@@ -24,4 +26,10 @@ install_vimplug() {
   sh -c 'curl -fLo "${HOME}/.local/share/nvim/site/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   nvim +PlugInstall +qall
 }
+
+install_homebrew
+install_doom
+install_fzf
+install_pure
+install_vimplug
 
