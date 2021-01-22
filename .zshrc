@@ -12,7 +12,9 @@ alias l='ls -aF'  # Display hidden files.
 alias ll='ls -lahF'  # List display, with symlinks.
 alias mv='mv -i'  # Prompt for overwrite.
 alias rm='rm -i'  # Prompt for safety.
+
 alias config='/usr/bin/git --git-dir=$HOME/src/dotfiles/ --work-tree=$HOME'  # Access dotfiles
+alias bat='bat --theme=GitHub'
 
 set -o emacs
 
