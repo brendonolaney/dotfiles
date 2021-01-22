@@ -27,9 +27,9 @@
   mu4e-drafts-folder "/Drafts"
   mu4e-trash-folder "/Trash"
   mu4e-refile-folder "/Archive")
-(setq user-mail-address "brendon.olaney@protonmail.com"
+(setq user-mail-address "brendon@brendonolaney.com"
   user-full-name  "Brendon O'Laney")
-(setq mu4e-get-mail-command "mbsync protonmail"
+(setq mu4e-get-mail-command "mbsync -a"
   mu4e-change-filenames-when-moving t
   mu4e-update-interval 120)
 (setq message-send-mail-function 'smtpmail-send-it
@@ -46,3 +46,16 @@
 
 ;; Reddit
 (setq md4rd-subs-active '(all vancouver))
+
+;; EMMS
+(use-package! emms
+  :config
+  (require 'emms-setup)
+  (emms-all)
+  (emms-default-players)
+  (setq emms-source-file-default-directory "~/Music/Music")
+  (map! (:leader (:prefix "e" :desc "emms next" :nv "j" #'emms-next)))
+  (map! (:leader (:prefix "e" :desc "emms previous" :nv "k" #'emms-previous)))
+  (map! (:leader (:prefix "e" :desc "emms pause" :nv "x" #'emms-pause)))
+  (map! (:leader (:prefix "e" :desc "emms pause" :nv "d" #'emms-play-directory)))
+  (map! (:leader (:desc "emms" :nv "`" #'emms))))
