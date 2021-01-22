@@ -5,3 +5,5 @@
   (:host github
    :repo "ahungry/md4rd"
    :branch "master"))
+
+(package! emms)
