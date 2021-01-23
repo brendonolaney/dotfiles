@@ -17,7 +17,7 @@ alias rm='rm -i'  # Prompt for safety.
 alias config='/usr/bin/git --git-dir=$HOME/src/dotfiles/ --work-tree=$HOME'  # Access dotfiles
 alias bat='bat --theme=GitHub'
 
-set -o vi
+set -o emacs
 
 # Use pure prompt
 if [[ -r "${HOME}/.zsh/pure" ]]
