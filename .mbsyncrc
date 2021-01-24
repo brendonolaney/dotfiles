@@ -1,7 +1,7 @@
 # Protonmail
 # ##########
 #
-# Server
+# Account
 IMAPAccount protonmail
 Host 127.0.0.1
 Port 1143
@@ -19,7 +19,7 @@ Account protonmail
 # Local
 MaildirStore protonmail-local
 Path ~/.mail/protonmail/
-Inbox ~/.mail/protonmail/Inbox/
+Inbox ~/.mail/protonmail/Inbox
 Trash Trash
 SubFolders Verbatim
 
