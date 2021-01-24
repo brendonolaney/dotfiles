@@ -5,7 +5,9 @@
       :prefix "o"
       :desc "calc" :nv "c" #'calc
       :desc "elfeed" :nv "e" #'elfeed
-      :desc "md4rd" :nv "M" #'md4rd)
+      :desc "md4rd" :nv "M" #'md4rd
+      :desc "twitter" :nv "w" #'twit
+      )
 
 ;; Editor Configuration
 (setq doom-font (font-spec :family "Source Code Pro" :size 14 :weight 'semi-bold)
