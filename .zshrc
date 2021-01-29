@@ -4,6 +4,8 @@ HISTSIZE=50000
 SAVEHIST=50000
 setopt appendhistory
 
+zstyle :prompt:pure:git:dirty color red
+
 # Useful aliases.
 alias vim='nvim'
 
@@ -13,6 +15,8 @@ alias ll='ls -lahF'  # List display, with symlinks.
 alias mv='mv -i'  # Prompt for overwrite.
 alias rm='rm -i'  # Prompt for safety.
 alias config='/usr/bin/git --git-dir=$HOME/src/dotfiles/ --work-tree=$HOME'
+alias bat='bat --theme=ansi-dark'
+alias http='http --style bw'
 
 set -o emacs
 
@@ -36,5 +40,5 @@ alias cdr='cd ~r'
 
 if [[ $(which ruby) == '/usr/bin/ruby' ]]
 then
-  emulate sh -c "source ${HOME}/.clio_profile"
+  eval "$(dev _hook)"
 fi

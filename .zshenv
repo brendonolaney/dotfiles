@@ -11,7 +11,4 @@ export GITEDITOR='nvim'
 
 export OVERMIND_COLORS=241,241,241,241,241,241,241,241,241,241
 
-if [[ -r "${HOME}/.clio_profile" ]]
-then
-  emulate sh -c "source $HOME/.clio_profile"
-fi
+eval "$(dev _hook)"
