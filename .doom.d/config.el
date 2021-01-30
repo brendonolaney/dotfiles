@@ -92,3 +92,47 @@
         :desc "emms" :nv "`" #'emms
         )
   )
+
+;; Elfeed Configuration
+(setq elfeed-youtube-dl-path "/usr/local/bin/youtube-dl"
+      elfeed-wget-path "/usr/local/bin/wget"
+      elfeed-youtube-dl-output-dir "${HOME}/tmp"
+      elfeed-wget-output-dir "${HOME}/tmp"
+      )
+(defun elfeed-download-video ()
+  "Download a video using youtube-dl."
+  (interactive)
+  (async-shell-command
+   (format "%s -o \"%s/%s\" -f \"%s\" \"%s\""
+           elfeed-youtube-dl-path
+           elfeed-youtube-dl-output-dir
+           "%(title)s.%(ext)s"
+           "bestvideo[width<=1080]+bestaudio"
+           (elfeed-entry-link (elfeed-search-selected :single))
+           )
+   )
+  )
+
+(defun elfeed-download-enclosure ()
+  "Download the first enclosure using wget."
+  (interactive)
+  (async-shell-command
+   (format "%s --directory-prefix \"%s\" \"%s\""
+           elfeed-wget-path
+           elfeed-wget-output-dir
+           (car (car
+                 (elfeed-entry-enclosures (elfeed-search-selected :single))
+                 )
+                ))
+   )
+  )
+
+(after! elfeed
+  (map!
+   :localleader
+   :map elfeed-search-mode-map
+   :prefix ("d" . "download")
+   :desc "download video" :nv "v" #'elfeed-download-video
+   :desc "download enclosure" :nv "e" #'elfeed-download-enclosure
+   )
+  )
