@@ -19,7 +19,7 @@ Account protonmail
 # Local
 MaildirStore protonmail-local
 Path ~/.mail/protonmail/
-Inbox ~/.mail/protonmail/Inbox
+Inbox ~/.mail/protonmail/INBOX
 Trash Trash
 SubFolders Verbatim
 
@@ -27,7 +27,8 @@ SubFolders Verbatim
 Channel protonmail
 Master :protonmail-remote:
 Slave :protonmail-local:
-Patterns * !"Drafts" !"All Mail" !"Labels/*" !"Folders/Strata"
+# Patterns * !"Drafts" !"Sent" !"All Mail" !"Labels/*" !"Folders/*" !"Spam" !"Trash"
+Patterns "INBOX" "Archive" "Spam"
 Sync All
 Create Slave
 Expunge Both
