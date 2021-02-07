@@ -1,0 +1,31 @@
+# ~/.offlineimaprc
+
+[general]
+accounts = protonmail
+pythonfile = ~/.config/offlineimap/keyring.py
+metadata = ~/.cache/offlineimap
+
+[Account protonmail]
+remoterepository = protonmail-remote
+localrepository = protonmail-local
+
+[Repository protonmail-local]
+type = Maildir
+localfolders = ~/.mail/protonmail
+sync_deletes = no
+
+[Repository protonmail-remote]
+expunge = yes
+type = IMAP
+remotehost = 127.0.0.1
+remoteport= 1143
+remoteuser = brendon.olaney@protonmail.com
+remotepasseval = get_password("brendon.olaney@protonmail.com")
+# Alternatively, use
+# remotepass = <YOUR BRIDGE-SPECIFIC PASSWORD>
+nametrans = lambda foldername: re.sub ('^Folders.', '', foldername)
+folderfilter = lambda foldername: foldername not in ['All Mail']
+ssl = no
+starttls = no
+ssl_version = tls1_2
+sslcacertfile = ~/Library/ApplicationSupport/protonmail/bridge/cert.pem
