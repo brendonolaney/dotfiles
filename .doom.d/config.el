@@ -17,9 +17,12 @@
 
 ;; Org Setup
 (after! org
-  (setq org-directory "~/.org/"
-        org-agenda-files (list "~/.org/")
+  (setq org-directory "~/.Org/"
+        org-agenda-files (list "~/.Org/")
         org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0/libexec/ditaa-0.11.0-standalone.jar"
+        +org-capture-journal-file "~/.Org/journal.org"
+        +org-capture-todo-file "~/.Org/todo.org"
+        +org-capture-notes-file "~/.Org/notes.org"
         )
   )
 
